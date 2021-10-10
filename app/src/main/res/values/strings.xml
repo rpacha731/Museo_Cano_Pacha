@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Museo_Cano_Pacha</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
 </resources>
