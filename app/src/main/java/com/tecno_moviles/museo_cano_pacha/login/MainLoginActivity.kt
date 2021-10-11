@@ -3,7 +3,6 @@ package com.tecno_moviles.museo_cano_pacha.login
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import com.tecno_moviles.museo_cano_pacha.R
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityMainLoginBinding
 
@@ -23,7 +22,6 @@ class MainLoginActivity : AppCompatActivity() {
         btnIrRegistro = supportFragmentManager.fragments.first().view?.findViewById(R.id.btnIrRegistrar)
 
         btnIrLogin?.setOnClickListener {
-            Toast.makeText(baseContext, "holis", Toast.LENGTH_LONG).show()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentOpcLog, LoginFragment()).addToBackStack(null).commit()
         }
