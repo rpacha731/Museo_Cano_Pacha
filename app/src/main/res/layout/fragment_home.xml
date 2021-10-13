@@ -9,7 +9,6 @@
 
     <Button
         android:id="@+id/btn_favoritos"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="165dp"
         android:layout_height="58dp"
         android:backgroundTint="#1A2D95"
@@ -23,7 +22,6 @@
 
     <Button
         android:id="@+id/btn_ver"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="165dp"
         android:layout_height="58dp"
         android:backgroundTint="#1A2D95"
@@ -54,7 +52,6 @@
 
     <Button
         android:id="@+id/btn_escanear"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="165dp"
         android:layout_height="58dp"
         android:backgroundTint="#1A2D95"
