@@ -22,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:fontFamily="@font/george_semibold"
         android:text="Bienvenido a la app de museos"
         android:textColor="@color/white"
         android:textSize="25sp"
@@ -29,15 +30,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoMuseo" />
 
-    <fragment
-        android:id="@+id/fragmentOpcLog"
-        android:name="com.tecno_moviles.museo_cano_pacha.login.OpcionesLoginFragment"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_login"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bienvenidoTxt"
-        tools:layout="@layout/fragment_opciones_login" />
+        app:layout_constraintTop_toBottomOf="@+id/bienvenidoTxt">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/george_semibold"
+            android:text="Debes ingresar o registrarte para\n poder usar la app!"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnIrLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:background="@drawable/rounded_btn"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:text="Ingresar" />
+
+        <Button
+            android:id="@+id/btnIrRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_btn"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:text="Registrarse" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
