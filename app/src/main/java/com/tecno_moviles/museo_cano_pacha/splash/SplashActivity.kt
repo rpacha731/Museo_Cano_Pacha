@@ -1,6 +1,5 @@
 package com.tecno_moviles.museo_cano_pacha.splash
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +8,6 @@ import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
 import java.util.*
 
 import kotlin.concurrent.schedule
-
 
 class SplashActivity : AppCompatActivity() {
 
