@@ -32,6 +32,11 @@
         <activity
             android:name=".login.MainLoginActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:label="@string/app_name">
     </application>
 
 </manifest>
