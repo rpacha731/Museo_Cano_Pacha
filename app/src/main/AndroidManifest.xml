@@ -15,14 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Museo_Cano_Pacha">
         <activity
-            android:name=".login.RegistroActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:exported="true" />
-        <activity
-            android:name=".login.LoginActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:exported="true" />
-        <activity
             android:name=".splash.SplashActivity"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="true">

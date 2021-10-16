@@ -14,14 +14,6 @@ class MainLoginActivity : AppCompatActivity() {
         binding = ActivityMainLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnIrLogin.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
-
-        binding.btnIrRegistrar.setOnClickListener {
-            startActivity(Intent(this, RegistroActivity::class.java))
-        }
-
     }
 
 }

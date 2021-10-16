@@ -30,46 +30,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoMuseo" />
 
-    <LinearLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/containerLogin"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_card_login"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bienvenidoTxt">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/george_semibold"
-            android:text="Debes ingresar o registrarte para\n poder usar la app!"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/btnIrLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-
-            android:background="@drawable/rounded_btn"
-            android:drawableRight="@drawable/ic_arrow_right"
-            android:text="Ingresar" />
-
-        <Button
-            android:id="@+id/btnIrRegistrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/rounded_btn"
-            android:drawableRight="@drawable/ic_arrow_right"
-            android:text="Registrarse" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/bienvenidoTxt"
+        tools:layout="@layout/fragment_opciones_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
