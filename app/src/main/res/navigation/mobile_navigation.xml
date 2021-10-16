@@ -9,7 +9,11 @@
         android:id="@+id/nav_home"
         android:name="com.tecno_moviles.museo_cano_pacha.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_perfil"
@@ -34,4 +38,8 @@
         android:name="com.tecno_moviles.museo_cano_pacha.ui.cerrar_sesion.CerrarSesionFragment"
         android:label="@string/menu_cerrarSesion"
         tools:layout="@layout/fragment_cerrar_sesion" />
+    <fragment
+        android:id="@+id/favoritosFragment"
+        android:name="com.tecno_moviles.museo_cano_pacha.ui.favoritos.FavoritosFragment"
+        android:label="FavoritosFragment" />
 </navigation>
