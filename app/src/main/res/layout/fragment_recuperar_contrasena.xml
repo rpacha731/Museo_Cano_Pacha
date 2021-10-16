@@ -19,17 +19,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="@string/iniciar_sesion"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="15dp">
+
+            <ImageView
+                android:id="@+id/btnVolverLogin"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_arrow_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Recuperar contraseña"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+
 
         <EditText
             android:id="@+id/editUsuario"
@@ -43,34 +60,27 @@
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/editPassword"
+            android:id="@+id/editMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_user"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:drawableStart="@drawable/ic_lock"
             android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/btnOlvideContra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="Olvidaste tu contraseña?"
-            android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btnIngresar"
+            android:id="@+id/btnRecuperar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:background="@drawable/rounded_btn"
             android:drawableRight="@drawable/ic_arrow_right"
-            android:text="Ingresar" />
+            android:text="Recuperar" />
 
     </LinearLayout>
 
