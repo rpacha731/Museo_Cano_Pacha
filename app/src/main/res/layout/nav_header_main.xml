@@ -11,13 +11,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="131dp"
-        android:layout_height="133dp"
-        android:contentDescription="@string/nav_header_desc"
-        android:cropToPadding="false"
-        app:srcCompat="@drawable/icono_perfil" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/foto_perfil"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp" />
 
     <TextView
         android:layout_width="match_parent"
