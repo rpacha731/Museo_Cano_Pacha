@@ -3,6 +3,8 @@ package com.tecno_moviles.museo_cano_pacha
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
@@ -13,12 +15,15 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.menu.MenuView
+import androidx.core.view.MenuCompat
 import com.google.zxing.integration.android.IntentIntegrator
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityHomeBinding
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentHomeBinding
+import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
 import com.tecno_moviles.museo_cano_pacha.ui.home.HomeFragment
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
@@ -38,8 +43,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_home,
                 R.id.nav_perfil,
                 R.id.nav_conf,
-                R.id.nav_ayuda,
-                R.id.nav_cerrar_sesion
+                R.id.nav_ayuda
             ), drawerLayout
         )
 
@@ -47,20 +51,51 @@ class HomeActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
 
-        var b : Button? = findViewById(R.id.btn_escanear)
-
-        b?.setOnClickListener {
-            IntentIntegrator(this).initiateScan()
-        }
 
 
+//        var b : Button? = findViewById(R.id.btn_escanear)
+//
+//        b?.setOnClickListener {
+//            IntentIntegrator(this).initiateScan()
+//        }
 
-        println(b.toString() +  "***************************")
+//        var btnCerrarSesion : MenuItem? = findViewById(R.id.nav_cerrar_sesion)
+//
+//        btnCerrarSesion?.setOnMenuItemClickListener() {
+//
+//        } .setOnMenuItemClickListener {
+//
+//            return true
+//            println("")
+//        }
+//
+//        println(btnCerrarSesion.toString() + "////////////////////////")
 
+//        btnCerrarSesion. ?.setOnClickListener {
+//            println("holissss***********************************")
+////            finish()
+//            startActivity(Intent(this, MainLoginActivity::class.java))
+//        }
+
+
+
+
+
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        println("-----------------" + item.itemId)
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
+        MenuCompat.setGroupDividerEnabled(menu, true)
+        println("tamaño" + menu.size())
+        menu.getItem(menu.size() - 1).setOnMenuItemClickListener {
+            println("eso tilinmnnnnnnn")
+            true
+        }
         return true
     }
 

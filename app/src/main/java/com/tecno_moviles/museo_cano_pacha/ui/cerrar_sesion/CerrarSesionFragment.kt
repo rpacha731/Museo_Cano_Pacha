@@ -1,5 +1,6 @@
 package com.tecno_moviles.museo_cano_pacha.ui.cerrar_sesion
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentCerrarSesionBinding
+import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
+import java.util.*
+import kotlin.concurrent.schedule
 
 class CerrarSesionFragment : Fragment() {
 
@@ -27,6 +31,14 @@ class CerrarSesionFragment : Fragment() {
         val root: View = binding.root
 
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Timer().schedule(2000) {
+            activity?.finish()
+            startActivity(Intent(activity?.applicationContext, MainLoginActivity::class.java))
+        }
     }
 
     override fun onDestroyView() {

@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.google.zxing.integration.android.IntentIntegrator
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
+
 
     private val binding get() = _binding!!
 
@@ -34,6 +36,9 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnFavoritos.setOnClickListener {
             Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavHomeToFavoritosFragment())
+        }
+        binding.btnEscanear.setOnClickListener {
+            IntentIntegrator(activity).initiateScan()
         }
     }
 

@@ -11,7 +11,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="15dp"
         app:cardBackgroundColor="#0000FFFF"
         app:cardCornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="220dp"
+        android:layout_width="210dp"
         android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:orientation="vertical"
@@ -56,20 +56,22 @@
             android:layout_height="wrap_content"
             android:text="El Retrato de Lisa Gherardini, esposa de Francesco del Giocondo, ​ más conocido como La Gioconda o La Mona Lisa, es una obra pictórica del polímata renacentista italiano Leonardo da Vinci." />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="-20dp"
-            android:background="@color/white"
-            android:paddingLeft="5dp"
-            android:text="Ver más ..."
-            android:textColor="#0000FF" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:layout_marginTop="-20dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:paddingLeft="5dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            android:text="..."-->
+<!--            android:textColor="#0000FF" />-->
 
     </LinearLayout>
 
     <View
         android:id="@+id/viewCorazon"
+
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="@drawable/ic_favorite"

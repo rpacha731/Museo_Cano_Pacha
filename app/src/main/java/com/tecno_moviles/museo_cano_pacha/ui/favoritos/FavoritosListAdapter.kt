@@ -33,6 +33,7 @@ class FavoritosListAdapter (private val data: List<Favorito>, private val listen
         (holder as FavoritosListViewHolder).imgFav.setImageResource(aux.resources.getIdentifier(favo.imagenNombre, "drawable", aux.packageName))
         holder.tituloFav.text = favo.titulo
         holder.descipFavo.text = favo.descrip
+        if (favo.esFav) holder.corazon.background = aux.getDrawable(R.drawable.ic_favorite_red) else holder.corazon.background = aux.getDrawable(R.drawable.ic_favorite)
     }
 
     override fun getItemCount(): Int = data.size
@@ -43,6 +44,7 @@ class FavoritosListViewHolder (itemView: View, listener: RecyclerViewOnClickList
     var imgFav : ImageView = itemView.findViewById(R.id.imgItemFavo)
     var tituloFav : TextView = itemView.findViewById(R.id.tituloItemFavo)
     var descipFavo : TextView = itemView.findViewById(R.id.descripItemFavo)
+    var corazon : View = itemView.findViewById(R.id.viewCorazon)
 
     init {
         itemView.setOnClickListener {

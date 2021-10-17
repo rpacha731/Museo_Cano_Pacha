@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+
+
+    <group android:id="@+id/opts">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_24"
@@ -20,6 +22,10 @@
             android:id="@+id/nav_ayuda"
             android:icon="@android:drawable/ic_menu_help"
             android:title="@string/menu_ayuda" />
+
+    </group>
+
+    <group android:id="@+id/crrSes">
         <item
             android:id="@+id/nav_cerrar_sesion"
             android:icon="@drawable/ic_cerrar_sesion_24"
