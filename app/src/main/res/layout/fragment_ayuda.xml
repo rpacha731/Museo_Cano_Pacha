@@ -6,17 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".ui.conf.ConfFragment">
 
+<!--    <TextView-->
+<!--        android:id="@+id/text_slideshow"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
     <TextView
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
+        android:id="@+id/text_ayuda"
+        android:layout_width="371dp"
+        android:layout_height="194dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="62dp"
+        android:fontFamily="@font/george_bold"
+        android:text="Esta aplicación fue desarrollada en el marco de la materia Tecnologías Móviles. Con ella podrás escanear códigos QR de los diferentes museos."
+        android:textColor="#252424"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_ayuda2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="42dp"
+        android:src="@drawable/iua"
+        app:layout_constraintBottom_toTopOf="@+id/text_ayuda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_ayuda2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="106dp"
+        android:fontFamily="@font/george_bold"
+        android:text="¡Qué te diviertas!"
+        android:textColor="@color/purple_500"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_version"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ayuda" />
+
+    <TextView
+        android:id="@+id/text_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="318dp"
+        android:layout_marginBottom="16dp"
+        android:text="Versión 1.0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ayuda2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
