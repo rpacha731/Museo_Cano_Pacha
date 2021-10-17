@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Museo_Cano_Pacha">
         <activity
             android:name=".splash.SplashActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,12 +26,12 @@
         </activity>
         <activity
             android:name=".login.MainLoginActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true" />
 
         <activity
             android:name=".splash.SplashExitoActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true" />
 
         <activity

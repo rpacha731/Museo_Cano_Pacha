@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7A73E7"
+    android:background="@color/backgr"
     tools:context=".splash.SplashExitoActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,30 +20,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="45sp"
             android:fontFamily="@font/george_bold"
-            android:text="Bienvenido" />
+            android:text="@string/txt_bienvenido"
+            android:textSize="@dimen/dim_50sp" />
 
         <TextView
             android:id="@+id/userTextViewSplash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:textColor="#00FF00"
+            android:layout_marginTop="@dimen/dim_15dp"
             android:fontFamily="@font/george_semibold_italic"
-            android:layout_marginTop="15dp"
-            android:text="username" />
+            android:textColor="#00FF00"
+            android:textSize="@dimen/dim_30sp"
+            tools:text="username" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="27sp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/george_semibold"
-            android:textAlignment="center"
+            android:layout_marginTop="@dimen/dim_15dp"
             android:gravity="center"
-            android:text="Te esperan muchos museos\npor conocer!" />
+            android:text="@string/txt_muchos_museos"
+            android:textAlignment="center"
+            android:textSize="@dimen/dim_25sp" />
 
     </LinearLayout>
 

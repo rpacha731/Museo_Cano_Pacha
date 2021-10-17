@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#0000FFFF"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/backgr">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/dim_layout_login"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_card_login"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="@dimen/dim_20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,10 +21,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="@dimen/dim_15dp"
+            android:fontFamily="@font/george_bold"
             android:text="@string/iniciar_sesion"
-            android:textSize="35sp"
-            android:textStyle="bold" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/dim_titulo_login" />
 
         <EditText
             android:id="@+id/editUsuario"
@@ -33,40 +33,46 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_user"
             android:ems="10"
-            android:hint="Nombre de usuario"
+            android:hint="@string/hint_usuario_edit"
             android:inputType="text"
-            android:minHeight="48dp"
-            android:textAlignment="center" />
+            android:minHeight="@dimen/dim_min_heig"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="@dimen/dim_20dp"
+            android:layout_marginBottom="@dimen/dim_20dp"
             android:drawableStart="@drawable/ic_lock"
             android:ems="10"
-            android:hint="Contraseña"
+            android:hint="@string/hint_contra_edit"
             android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textAlignment="center" />
+            android:minHeight="@dimen/dim_min_heig"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/btnOlvideContra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="Olvidaste tu contraseña?"
-            android:textSize="18sp" />
+            android:layout_marginBottom="@dimen/dim_15dp"
+            android:text="@string/txt_olvidaste"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dim_18sp" />
 
         <Button
             android:id="@+id/btnIngresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="@dimen/dim_15dp"
             android:background="@drawable/rounded_btn"
-            android:drawableRight="@drawable/ic_arrow_right"
-            android:text="Ingresar" />
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:paddingStart="@dimen/dim_15dp"
+            android:paddingEnd="@dimen/dim_5dp"
+            android:text="@string/txt_ingresar"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

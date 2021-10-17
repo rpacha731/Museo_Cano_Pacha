@@ -15,4 +15,19 @@
     <string name="menu_cerrarSesion">Cerrar Sesión</string>
     <string name="menu_conf">Configuración</string>
     <string name="menu_perfil">Perfil</string>
+    <string name="text_opc_log">Debes ingresar o registrarte para\n poder usar la app!</string>
+    <string name="txt_ingresar">Ingresar</string>
+    <string name="txt_registrarse">Registrarse</string>
+    <string name="txt_bienvenido_app">Bienvenido a la app de museos</string>
+    <string name="hint_usuario_edit">Nombre de usuario</string>
+    <string name="hint_contra_edit">Contraseña</string>
+    <string name="txt_olvidaste">Olvidaste tu contraseña?</string>
+    <string name="txt_recuperar_contra">Recuperar contraseña</string>
+    <string name="hint_email_edit">Email</string>
+    <string name="txt_recuperar_btn">Recuperar</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_apellido">Apellido</string>
+    <string name="txt_bienvenido">Bienvenido</string>
+    <string name="txt_muchos_museos">Te esperan muchos museos\npor conocer!</string>
+    <string name="escaner_qr">Escáner QR</string>
 </resources>
