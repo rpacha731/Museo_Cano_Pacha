@@ -15,6 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Museo_Cano_Pacha">
         <activity
+            android:name=".resultado_qr.ResultadoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".login.RegistroActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
             android:name=".splash.SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true">
@@ -37,7 +48,7 @@
         <activity
             android:name=".HomeActivity"
             android:exported="true"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name" />
     </application>
 
 </manifest>
