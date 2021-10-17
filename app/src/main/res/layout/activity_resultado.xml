@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".resultado_qr.ResultadoActivity">
+
+    <TextView
+        android:id="@+id/text_descripcion"
+        android:layout_width="395dp"
+        android:layout_height="283dp"
+        android:fontFamily="@font/george_semibold"
+        android:text="Esta aeronave (matricula C-709) llegó al país a partir de 1983, provenientes de Israel, donde originalmente operaron en la Fuerza Aérea Israelí bajo la denominación “Shahak” (MIIICJ).  La mayoría de estas aeronaves intervinieron en el conflicto  o guerra de Yom Kipur, también conocida como guerra del Ramadán o guerra de Octubre. Posteriormente operaron por un tiempo en la X Brigada Aérea con asiento en Rio Gallegos, donde nació el Escuadrón ”Guerreros del Hielo”. Poco tiempo después fueron reemplazados en esta misma Unidad por los aviones que nuestro País había adquirido a la República del Perú en 1982, los MIRAGE-VP. De esta forma todos los MIRAGE III CJ, pasaron a prestar servicios en la IV Brigada Aérea con asiento en MENDOZA, Cuna de la Aviación de CAZA."
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/george_bold"
+        android:text="Mirage IIICJ"
+        android:textColor="@color/purple_500"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="57dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        app:backgroundTint="@color/purple_200"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:maxImageSize="40dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="355dp"
+        android:layout_height="252dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.214"
+        app:srcCompat="@drawable/mirage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
