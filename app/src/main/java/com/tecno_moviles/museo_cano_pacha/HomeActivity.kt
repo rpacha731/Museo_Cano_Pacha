@@ -1,6 +1,8 @@
 package com.tecno_moviles.museo_cano_pacha
 
+import android.app.Application
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -81,6 +83,33 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
+        val btn_mail: Button = findViewById(R.id.btn_mail)
+        btn_mail.setOnClickListener {
+            enviarMail()
+        }
+
+    }
+
+    fun enviarMail() {
+//        val intent = Intent(Intent.ACTION_SEND).apply {
+//            //type = "*/*"
+//            intent.data = Uri.parse("mailto:") // only email apps should handle this
+//            putExtra(Intent.EXTRA_EMAIL, addresses)
+//            putExtra(Intent.EXTRA_SUBJECT, subject)
+//            putExtra(Intent.EXTRA_TEXT, msg)
+//        }
+        val intent = Intent(
+            Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", "pacha.eli.2021@gmail.com", null
+            )
+        )
+        try {
+            startActivity(intent)
+            Toast.makeText(applicationContext,"Mail enviado", Toast.LENGTH_SHORT).show()
+        }
+        catch (e: Exception) {
+            Toast.makeText ( applicationContext , e.message, Toast.LENGTH_LONG) .show ()
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

@@ -10,28 +10,44 @@
     <Button
         android:id="@+id/btn_favoritos"
         android:layout_width="165dp"
-        android:layout_height="58dp"
+        android:layout_height="114dp"
         android:backgroundTint="#1A2D95"
         android:text="Favoritos"
         app:iconTint="#FFC107"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.93" />
+
+    <Button
+        android:id="@+id/btn_mail"
+        android:layout_width="166dp"
+        android:layout_height="114dp"
+        android:backgroundTint="#1A2D95"
+        android:text="Enviar sugerencia"
+        app:iconTint="#FFC107"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93" />
 
     <Button
         android:id="@+id/btn_ver"
         android:layout_width="165dp"
-        android:layout_height="58dp"
+        android:layout_height="114dp"
         android:backgroundTint="#1A2D95"
         android:text="Ver contenido"
         app:iconTint="#FFC107"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintVertical_bias="0.69" />
 
     <TextView
         android:id="@+id/text_tittle"
@@ -53,24 +69,25 @@
     <Button
         android:id="@+id/btnEscanear"
         android:layout_width="165dp"
-        android:layout_height="58dp"
+        android:layout_height="114dp"
         android:backgroundTint="#1A2D95"
         android:text="Escanear QR"
         app:iconTint="#FFC107"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
+        app:layout_constraintVertical_bias="0.69" />
 
     <ImageView
         android:id="@+id/logo_iua"
-        android:layout_width="171dp"
-        android:layout_height="332dp"
+        android:layout_width="193dp"
+        android:layout_height="245dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166"
-        app:srcCompat="@drawable/iua" />
+        app:layout_constraintVertical_bias="0.281"
+        app:srcCompat="@drawable/qr_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
