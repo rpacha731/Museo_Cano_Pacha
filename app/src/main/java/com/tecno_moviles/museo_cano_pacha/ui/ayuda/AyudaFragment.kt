@@ -50,7 +50,7 @@ class AyudaFragment : Fragment() {
             Toast.makeText(activity?.applicationContext , e.message, Toast.LENGTH_LONG).show ()
         }
 
-        Toast.makeText(activity?.applicationContext,"Mail enviado", Toast.LENGTH_LONG).show()
+        Toast.makeText(activity?.applicationContext,"Enviando mail", Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroyView() {
