@@ -17,15 +17,11 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuView
-import androidx.core.view.MenuCompat
 import com.google.zxing.integration.android.IntentIntegrator
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityHomeBinding
-import com.tecno_moviles.museo_cano_pacha.databinding.FragmentHomeBinding
-import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
-import com.tecno_moviles.museo_cano_pacha.ui.home.HomeFragment
+import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
@@ -45,86 +41,47 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.nav_home,
                 R.id.nav_perfil,
                 R.id.nav_conf,
-                R.id.nav_ayuda
+                R.id.nav_ayuda,
+                R.id.nav_cerrar_sesion
             ), drawerLayout
         )
 
         navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
-
-
-//        var b : Button? = findViewById(R.id.btn_escanear)
-//
-//        b?.setOnClickListener {
-//            IntentIntegrator(this).initiateScan()
+//        val btnMail: Button = findViewById(R.id.btn_mail)
+//        btnMail.setOnClickListener {
+//            enviarMail()
 //        }
-
-//        var btnCerrarSesion : MenuItem? = findViewById(R.id.nav_cerrar_sesion)
-//
-//        btnCerrarSesion?.setOnMenuItemClickListener() {
-//
-//        } .setOnMenuItemClickListener {
-//
-//            return true
-//            println("")
-//        }
-//
-//        println(btnCerrarSesion.toString() + "////////////////////////")
-
-//        btnCerrarSesion. ?.setOnClickListener {
-//            println("holissss***********************************")
-////            finish()
-//            startActivity(Intent(this, MainLoginActivity::class.java))
-//        }
-
-
-
-
-
-        val btn_mail: Button = findViewById(R.id.btn_mail)
-        btn_mail.setOnClickListener {
-            enviarMail()
-        }
 
     }
 
-    fun enviarMail() {
-//        val intent = Intent(Intent.ACTION_SEND).apply {
-//            //type = "*/*"
-//            intent.data = Uri.parse("mailto:") // only email apps should handle this
-//            putExtra(Intent.EXTRA_EMAIL, addresses)
-//            putExtra(Intent.EXTRA_SUBJECT, subject)
-//            putExtra(Intent.EXTRA_TEXT, msg)
+//    fun enviarMail() {
+////        val intent = Intent(Intent.ACTION_SEND).apply {
+////            //type = "*/*"
+////            intent.data = Uri.parse("mailto:") // only email apps should handle this
+////            putExtra(Intent.EXTRA_EMAIL, addresses)
+////            putExtra(Intent.EXTRA_SUBJECT, subject)
+////            putExtra(Intent.EXTRA_TEXT, msg)
+////        }
+//        val intent = Intent(
+//            Intent.ACTION_SENDTO, Uri.fromParts(
+//                "mailto", "pacha.eli.2021@gmail.com", null
+//            )
+//        )
+//        try {
+//            startActivity(intent)
+//            Toast.makeText(applicationContext,"Mail enviado", Toast.LENGTH_SHORT).show()
 //        }
-        val intent = Intent(
-            Intent.ACTION_SENDTO, Uri.fromParts(
-                "mailto", "pacha.eli.2021@gmail.com", null
-            )
-        )
-        try {
-            startActivity(intent)
-            Toast.makeText(applicationContext,"Mail enviado", Toast.LENGTH_SHORT).show()
-        }
-        catch (e: Exception) {
-            Toast.makeText ( applicationContext , e.message, Toast.LENGTH_LONG) .show ()
-        }
-    }
+//        catch (e: Exception) {
+//            Toast.makeText ( applicationContext , e.message, Toast.LENGTH_LONG) .show ()
+//        }
+//    }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        println("-----------------" + item.itemId)
-        return true
-    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
-        MenuCompat.setGroupDividerEnabled(menu, true)
-        println("tamaño" + menu.size())
-        menu.getItem(menu.size() - 1).setOnMenuItemClickListener {
-            println("eso tilinmnnnnnnn")
-            true
-        }
         return true
     }
 
@@ -141,7 +98,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(this, "Sin resultado", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_LONG).show()
-
+                startActivity(Intent(this, ResultadoActivity::class.java))
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)

@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.tecno_moviles.museo_cano_pacha.R
 
-class FragmentRecuperarContrasena : Fragment() {
+class RecuperarContrasenaFragment : Fragment() {
 
-    private lateinit var btnVolverLogin : ImageView
+    private lateinit var btnVolverLogin : View
     private lateinit var btnRecuperar : Button
 
     override fun onCreateView(
@@ -33,13 +33,13 @@ class FragmentRecuperarContrasena : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnVolverLogin.setOnClickListener {
-            Navigation.findNavController(view).navigate(FragmentRecuperarContrasenaDirections.actionFragmentRecuperarContrasenaToOpcionesLoginFragment())
+            Navigation.findNavController(view).navigate(RecuperarContrasenaFragmentDirections.actionRecuperarContrasenaFragment2ToOpcionesLoginFragment())
         }
 
         btnRecuperar.setOnClickListener {
             // Consumo de API para recuperar la contraseña (que llegue al mail o algo así)
             Toast.makeText(context, "Se ha enviado un correo a la dirección ingresada con la nueva contraseña", Toast.LENGTH_LONG).show()
-            Navigation.findNavController(view).navigate(FragmentRecuperarContrasenaDirections.actionFragmentRecuperarContrasenaToOpcionesLoginFragment())
+            Navigation.findNavController(view).navigate(RecuperarContrasenaFragmentDirections.actionRecuperarContrasenaFragment2ToOpcionesLoginFragment())
         }
 
     }

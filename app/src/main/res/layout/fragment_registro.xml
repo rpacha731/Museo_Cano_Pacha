@@ -31,65 +31,85 @@
             android:id="@+id/editRegisNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_check"
+            android:drawableTint="@color/black"
             android:ems="10"
+            android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_nombre"
             android:inputType="text"
             android:minHeight="@dimen/dim_min_heig"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
 
         <EditText
             android:id="@+id/editRegisApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_15dp"
+            android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_check"
+            android:drawableTint="@color/black"
             android:ems="10"
+            android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_apellido"
             android:inputType="text"
             android:minHeight="@dimen/dim_min_heig"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
 
         <EditText
             android:id="@+id/editRegisUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_15dp"
+            android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_user"
+            android:drawableTint="@color/black"
             android:ems="10"
+            android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_usuario_edit"
             android:inputType="text"
             android:minHeight="@dimen/dim_min_heig"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
 
         <EditText
             android:id="@+id/editRegisMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_15dp"
+            android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_email"
+            android:drawableTint="@color/black"
             android:ems="10"
+            android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_email_edit"
             android:inputType="textEmailAddress"
             android:minHeight="@dimen/dim_min_heig"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
 
         <EditText
             android:id="@+id/editRegisPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_15dp"
+            android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_lock"
+            android:drawableTint="@color/black"
             android:ems="10"
+            android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_contra_edit"
             android:inputType="textPassword"
             android:minHeight="@dimen/dim_min_heig"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
 
         <Button
             android:id="@+id/btnRegistrar"
@@ -99,8 +119,10 @@
             android:layout_marginBottom="@dimen/dim_15dp"
             android:background="@drawable/rounded_btn"
             android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawablePadding="@dimen/dim_10dp"
+            android:fontFamily="@font/george_semibold"
             android:paddingStart="@dimen/dim_15dp"
-            android:paddingEnd="@dimen/dim_5dp"
+            android:paddingEnd="@dimen/dim_10dp"
             android:text="@string/txt_registrarse"
             android:textColor="@color/white" />
 

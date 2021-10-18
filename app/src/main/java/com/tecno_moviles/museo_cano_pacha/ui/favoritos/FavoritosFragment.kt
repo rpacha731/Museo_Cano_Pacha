@@ -1,6 +1,6 @@
 package com.tecno_moviles.museo_cano_pacha.ui.favoritos
 
-import android.graphics.drawable.Drawable
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,13 +11,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tecno_moviles.museo_cano_pacha.R
-import org.xmlpull.v1.XmlPullParser
+import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
 
 class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
 
     private val favoritosList = mutableListOf<Favorito> ()
     lateinit var recyclerView: RecyclerView
     private lateinit var btnCorazon : View
+    private lateinit var backItem : View
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,17 +58,24 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
 
     override fun onItemClick(position: Int) {
 
-        btnCorazon = recyclerView.get(position).findViewById(R.id.viewCorazon)
+        btnCorazon = recyclerView[position].findViewById(R.id.viewCorazon)
         btnCorazon.setOnClickListener {
-            if (favoritosList.get(position).esFav) {
-                favoritosList.get(position).esFav = false
+            if (favoritosList[position].esFav) {
+                favoritosList[position].esFav = false
                 it.background = resources.getDrawable(R.drawable.ic_favorite)
             } else {
-                favoritosList.get(position).esFav = true
+                favoritosList[position].esFav = true
                 it.background = resources.getDrawable(R.drawable.ic_favorite_red)
             }
         }
 
+        backItem = recyclerView[position].findViewById(R.id.back_item)
+        backItem.setOnClickListener {
+            startActivity(Intent(activity?.applicationContext, ResultadoActivity::class.java))
+        }
+
         Toast.makeText(activity?.baseContext, "El titulo seleccionado es: ${favoritosList[position].titulo}", Toast.LENGTH_SHORT).show()
     }
+
+
 }

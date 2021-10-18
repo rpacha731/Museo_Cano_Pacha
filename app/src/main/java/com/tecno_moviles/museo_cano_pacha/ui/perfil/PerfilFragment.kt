@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentPerfilBinding
 
 class PerfilFragment : Fragment() {
@@ -27,6 +28,13 @@ class PerfilFragment : Fragment() {
         val root: View = binding.root
 
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnPerfilFav.setOnClickListener {
+            Navigation.findNavController(view).navigate(PerfilFragmentDirections.actionNavPerfilToFavoritosFragment())
+        }
     }
 
     override fun onDestroyView() {

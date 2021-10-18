@@ -29,6 +29,29 @@ class ConfFragment : Fragment() {
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.switch1.setOnClickListener {
+            if (binding.switch1.isChecked) binding.switch1.isChecked = true else binding.switch1.isChecked = false
+        }
+
+        binding.edit1.setOnClickListener {
+            binding.inputNombre.isEnabled = true
+        }
+        binding.edit2.setOnClickListener {
+            binding.inputMail.isEnabled = true
+        }
+        binding.edit3.setOnClickListener {
+            binding.inputPassword.isEnabled = true
+        }
+
+        binding.btnGuardarConf.setOnClickListener {
+            binding.inputNombre.isEnabled = false
+            binding.inputMail.isEnabled = false
+            binding.inputPassword.isEnabled = false
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

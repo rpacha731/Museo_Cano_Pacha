@@ -36,7 +36,7 @@ class LoginFragment : Fragment() {
         }
 
         txtOlvideContra.setOnClickListener {
-            Navigation.findNavController(view).navigate(LoginFragmentDirections.actionLoginFragmentToFragmentRecuperarContrasena())
+            Navigation.findNavController(view).navigate(LoginFragmentDirections.actionLoginFragmentToRecuperarContrasenaFragment2())
         }
     }
 }

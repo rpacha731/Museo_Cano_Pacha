@@ -12,19 +12,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+
         android:supportsRtl="true"
         android:theme="@style/Theme.Museo_Cano_Pacha">
         <activity
             android:name=".resultado_qr.ResultadoActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true" />
-        <activity
-            android:name=".login.RegistroActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
-        <activity
-            android:name=".login.LoginActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".splash.SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
