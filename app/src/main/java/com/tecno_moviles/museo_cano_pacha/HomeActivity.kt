@@ -49,36 +49,7 @@ class HomeActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-//        val btnMail: Button = findViewById(R.id.btn_mail)
-//        btnMail.setOnClickListener {
-//            enviarMail()
-//        }
-
     }
-
-//    fun enviarMail() {
-////        val intent = Intent(Intent.ACTION_SEND).apply {
-////            //type = "*/*"
-////            intent.data = Uri.parse("mailto:") // only email apps should handle this
-////            putExtra(Intent.EXTRA_EMAIL, addresses)
-////            putExtra(Intent.EXTRA_SUBJECT, subject)
-////            putExtra(Intent.EXTRA_TEXT, msg)
-////        }
-//        val intent = Intent(
-//            Intent.ACTION_SENDTO, Uri.fromParts(
-//                "mailto", "pacha.eli.2021@gmail.com", null
-//            )
-//        )
-//        try {
-//            startActivity(intent)
-//            Toast.makeText(applicationContext,"Mail enviado", Toast.LENGTH_SHORT).show()
-//        }
-//        catch (e: Exception) {
-//            Toast.makeText ( applicationContext , e.message, Toast.LENGTH_LONG) .show ()
-//        }
-//    }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)

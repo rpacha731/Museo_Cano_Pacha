@@ -29,7 +29,11 @@
         android:id="@+id/nav_conf"
         android:name="com.tecno_moviles.museo_cano_pacha.ui.conf.ConfFragment"
         android:label="@string/menu_conf"
-        tools:layout="@layout/fragment_conf" />
+        tools:layout="@layout/fragment_conf" >
+        <action
+            android:id="@+id/action_nav_conf_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_ayuda"
@@ -45,5 +49,5 @@
     <fragment
         android:id="@+id/favoritosFragment"
         android:name="com.tecno_moviles.museo_cano_pacha.ui.favoritos.FavoritosFragment"
-        android:label="FavoritosFragment" />
+        android:label="@string/favoritos" />
 </navigation>

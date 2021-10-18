@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentConfBinding
 
 class ConfFragment : Fragment() {
@@ -49,6 +50,8 @@ class ConfFragment : Fragment() {
             binding.inputNombre.isEnabled = false
             binding.inputMail.isEnabled = false
             binding.inputPassword.isEnabled = false
+
+            Navigation.findNavController(view).navigate(ConfFragmentDirections.actionNavConfToNavHome())
         }
     }
 
