@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_to_favoritosFragment"
             app:destination="@id/favoritosFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_listadoFragment"
+            app:destination="@id/listadoFragment" />
     </fragment>
 
     <fragment
@@ -50,4 +53,8 @@
         android:id="@+id/favoritosFragment"
         android:name="com.tecno_moviles.museo_cano_pacha.ui.favoritos.FavoritosFragment"
         android:label="@string/favoritos" />
+    <fragment
+        android:id="@+id/listadoFragment"
+        android:name="com.tecno_moviles.museo_cano_pacha.ui.listado.ListadoFragment"
+        android:label="@string/listado" />
 </navigation>

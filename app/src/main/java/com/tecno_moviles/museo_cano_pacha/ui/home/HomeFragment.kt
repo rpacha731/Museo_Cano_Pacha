@@ -40,6 +40,9 @@ class HomeFragment : Fragment() {
         binding.btnEscanear.setOnClickListener {
             IntentIntegrator(activity).initiateScan()
         }
+        binding.btnVerListado.setOnClickListener {
+            Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavHomeToListadoFragment())
+        }
     }
 
     override fun onDestroyView() {

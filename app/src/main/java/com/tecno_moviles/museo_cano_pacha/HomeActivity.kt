@@ -68,7 +68,6 @@ class HomeActivity : AppCompatActivity() {
             if (result.contents == null) {
                 Toast.makeText(this, "Sin resultado", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this, ResultadoActivity::class.java))
             }
         } else {
