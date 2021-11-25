@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.tecno_moviles.museo_cano_pacha.ui.favoritos.Favorito
+import com.tecno_moviles.museo_cano_pacha.ui.favoritos.FavoritoDB
 import java.util.ArrayList
 
 class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION){
@@ -33,13 +34,13 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         database.delete(TABLE_FAVS, "$KEY_ID_QR = ? AND $KEY_USERNAME = ?", selectionArgument)
     }
 
-    fun getFavs(username : String) : List<Int>{
+    fun getFavs(username : String) : MutableList<FavoritoDB>{
         val database = this.readableDatabase
-        val selectionArgument = arrayOf( username)
-        val listaFavs: MutableList<Int> = ArrayList()
+        val selectionArgument = arrayOf(username)
+        val listaFavs: MutableList<FavoritoDB> = ArrayList()
         val pointer = database.query(TABLE_FAVS, null, "$KEY_USERNAME = ?", selectionArgument, null, null, null)
         while (pointer.moveToNext()){
-            listaFavs.add(pointer.getInt(1))
+            listaFavs.add(FavoritoDB(pointer.getInt(1), pointer.getString(0), true))
         }
         return listaFavs
     }

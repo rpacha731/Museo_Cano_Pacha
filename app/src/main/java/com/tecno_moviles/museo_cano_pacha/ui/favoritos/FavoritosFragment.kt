@@ -1,7 +1,9 @@
 package com.tecno_moviles.museo_cano_pacha.ui.favoritos
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,46 +41,27 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
         return view
     }
 
-
-
     private fun initFavs () {
 
         val baseDatos = getInstance(context)
         val lista = baseDatos!!.getFavs("leo")
+        favoritosList.clear()
         for (i in lista.indices) {
             if (i % 2 == 0) favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-            else favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
+            else favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", true))
         }
-        // Duda: cambiar por uri o por id drawable segun lo que devuelva el servidor
-//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-
     }
 
     override fun onItemClick(position: Int) {
-
+        val baseDatos = getInstance(context)
         btnCorazon = recyclerView[position].findViewById(R.id.viewCorazon)
         btnCorazon.setOnClickListener {
             if (favoritosList[position].esFav) {
                 favoritosList[position].esFav = false
                 it.background = resources.getDrawable(R.drawable.ic_favorite)
-            } else {
-                favoritosList[position].esFav = true
-                it.background = resources.getDrawable(R.drawable.ic_favorite_red)
+                baseDatos!!.deleteFav(1, "leo")
             }
+            this.onResume()
         }
 
         backItem = recyclerView[position].findViewById(R.id.back_item)
@@ -86,7 +69,6 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
             startActivity(Intent(activity?.applicationContext, ResultadoActivity::class.java))
         }
 
-        Toast.makeText(activity?.baseContext, "El titulo seleccionado es: ${favoritosList[position].titulo}", Toast.LENGTH_SHORT).show()
     }
 
 

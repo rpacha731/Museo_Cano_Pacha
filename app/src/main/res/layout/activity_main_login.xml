@@ -25,6 +25,7 @@
         android:fontFamily="@font/george_semibold"
         android:text="@string/txt_bienvenido_app"
         android:textColor="@color/white"
+        android:textAlignment="center"
         android:textSize="@dimen/dim_25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
