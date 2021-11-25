@@ -1,6 +1,7 @@
 package com.tecno_moviles.museo_cano_pacha.resultado_qr
 
 import android.content.Intent
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -9,10 +10,13 @@ import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.BitmapRequestListener
 import com.androidnetworking.interfaces.JSONObjectRequestListener
+import com.tecno_moviles.museo_cano_pacha.R
+import com.tecno_moviles.museo_cano_pacha.database.BaseDatos.Companion.getInstance
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityResultadoBinding
 import com.tecno_moviles.museo_cano_pacha.ui.listado.Item
 import com.tecno_moviles.museo_cano_pacha.ui.listado.ListadoFragment
@@ -70,6 +74,19 @@ class ResultadoActivity : AppCompatActivity() {
 
         binding.youtube.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(auxLinkYoutube)))
+        }
+
+        val baseDatos = getInstance(this)
+        val lista = baseDatos!!.getFavs("leo")
+        binding.floatingActionButton.setOnClickListener {
+            if (!it.background.equals(ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite, theme))) {
+                baseDatos!!.addFav(1, "leo")
+                it.background = resources.getDrawable(R.drawable.ic_favorite_red)
+            } else {
+//                baseDatos!!.deleteFav(1, "leo")
+                it.background = resources.getDrawable(R.drawable.ic_favorite)
+            }
+
         }
     }
 }

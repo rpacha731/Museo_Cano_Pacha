@@ -195,19 +195,29 @@
 
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <View
         android:id="@+id/floatingActionButton"
-        android:layout_width="@dimen/dim_55dp"
-        android:layout_height="@dimen/dim_55dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:src="@drawable/ic_launcher_foreground"
-        app:backgroundTint="@color/purple_200"
+        android:layout_width="@dimen/dim_35dp"
+        android:layout_height="@dimen/dim_35dp"
+        android:background="@drawable/ic_favorite"
+        android:layout_marginEnd="@dimen/dim_15dp"
+        android:layout_marginBottom="@dimen/dim_15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:maxImageSize="40dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floatingActionButton"-->
+<!--        android:layout_width="@dimen/dim_55dp"-->
+<!--        android:layout_height="@dimen/dim_55dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@drawable/ic_launcher_foreground"-->
+<!--        app:backgroundTint="@color/purple_200"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.955"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:maxImageSize="40dp" />-->
 
     <LinearLayout
         android:id="@+id/progressBar2"

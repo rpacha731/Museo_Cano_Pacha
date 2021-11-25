@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -14,6 +15,7 @@ class LoginFragment : Fragment() {
 
     private lateinit var btnIngresar : Button
     private lateinit var txtOlvideContra : TextView
+    private lateinit var editUsuario : EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +26,7 @@ class LoginFragment : Fragment() {
 
         btnIngresar = view.findViewById(R.id.btnIngresar)
         txtOlvideContra = view.findViewById(R.id.btnOlvideContra)
+        editUsuario = view.findViewById(R.id.editUsuario)
 
         return view
     }
@@ -32,6 +35,11 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnIngresar.setOnClickListener {
+
+            var aux1 : Boolean
+            var aux2 : Boolean
+            if (MainLoginActivity.prefs.username!!.equals(editUsuario.text))
+
             Navigation.findNavController(view).navigate(LoginFragmentDirections.actionLoginFragmentToSplashExitoActivity())
         }
 
