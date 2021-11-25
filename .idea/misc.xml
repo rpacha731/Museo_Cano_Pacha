@@ -3,10 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/content_home.xml" value="0.25" />
-        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_ayuda.xml" value="0.33" />
-        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout-w936dp/item_view_listado.xml" value="0.1" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_home.xml" value="0.1644021739130435" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_main_login.xml" value="0.1644021739130435" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_resultado.xml" value="0.24295432458697766" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/content_home.xml" value="0.1644021739130435" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_favoritos.xml" value="0.1" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_home.xml" value="0.1644021739130435" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_listado.xml" value="0.23565573770491804" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/item_view_favorito.xml" value="0.1" />
+        <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/item_view_listado.xml" value="0.4" />
       </map>
     </option>
   </component>
