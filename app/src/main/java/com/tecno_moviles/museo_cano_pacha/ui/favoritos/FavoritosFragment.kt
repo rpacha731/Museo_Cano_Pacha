@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tecno_moviles.museo_cano_pacha.R
+import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
+import com.tecno_moviles.museo_cano_pacha.database.BaseDatos.Companion.getInstance
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
 
 class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
@@ -25,6 +27,7 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view = inflater.inflate(R.layout.fragment_favoritos, container, false)
 
         initFavs()
@@ -36,23 +39,32 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
         return view
     }
 
+
+
     private fun initFavs () {
+
+        val baseDatos = getInstance(context)
+        val lista = baseDatos!!.getFavs("leo")
+        for (i in lista.indices) {
+            if (i % 2 == 0) favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
+            else favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
+        }
         // Duda: cambiar por uri o por id drawable segun lo que devuelva el servidor
-        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
-        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
-        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
-        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
+//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
+//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
+//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
+//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
+//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
+//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
+//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
+//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
+//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
+//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
+//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
+//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
+//        favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
+//        favoritosList.add(Favorito("dedos", "Dedos dedosos", "soy una descripción 2", false))
+//        favoritosList.add(Favorito("grito", "El grito", "soy una descripción 3", true))
 
     }
 

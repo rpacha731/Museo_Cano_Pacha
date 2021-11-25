@@ -13,6 +13,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.BitmapRequestListener
 import com.androidnetworking.interfaces.JSONObjectRequestListener
+import com.tecno_moviles.museo_cano_pacha.database.BaseDatos.Companion.getInstance
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityResultadoBinding
 import com.tecno_moviles.museo_cano_pacha.ui.listado.Item
 import com.tecno_moviles.museo_cano_pacha.ui.listado.ListadoFragment
@@ -70,6 +71,12 @@ class ResultadoActivity : AppCompatActivity() {
 
         binding.youtube.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(auxLinkYoutube)))
+        }
+
+        val baseDatos = getInstance(this)
+
+        binding.floatingActionButton.setOnClickListener {
+            baseDatos!!.addFav(1, "leo")
         }
     }
 }
