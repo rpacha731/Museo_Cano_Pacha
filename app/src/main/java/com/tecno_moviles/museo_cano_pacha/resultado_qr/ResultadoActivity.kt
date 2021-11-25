@@ -18,6 +18,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.tecno_moviles.museo_cano_pacha.R
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos.Companion.getInstance
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityResultadoBinding
+import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 import com.tecno_moviles.museo_cano_pacha.ui.listado.Item
 import com.tecno_moviles.museo_cano_pacha.ui.listado.ListadoFragment
 import com.tecno_moviles.museo_cano_pacha.ui.listado.ListadoListAdapter
@@ -77,13 +78,13 @@ class ResultadoActivity : AppCompatActivity() {
         }
 
         val baseDatos = getInstance(this)
-        val lista = baseDatos!!.getFavs("leo")
+        val lista = baseDatos!!.getFavs(SplashActivity.prefs.username.toString())
         binding.floatingActionButton.setOnClickListener {
             if (!it.background.equals(ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite, theme))) {
-                baseDatos!!.addFav(1, "leo")
+                baseDatos!!.addFav(1, SplashActivity.prefs.username.toString())
                 it.background = resources.getDrawable(R.drawable.ic_favorite_red)
             } else {
-//                baseDatos!!.deleteFav(1, "leo")
+                baseDatos!!.deleteFav(1, SplashActivity.prefs.username.toString())
                 it.background = resources.getDrawable(R.drawable.ic_favorite)
             }
 

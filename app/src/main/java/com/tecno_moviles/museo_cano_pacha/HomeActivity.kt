@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityHomeBinding
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
+import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -48,7 +50,6 @@ class HomeActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

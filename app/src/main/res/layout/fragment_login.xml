@@ -38,11 +38,12 @@
             android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_usuario_edit"
             android:inputType="text"
+            android:maxLength="10"
             android:minHeight="@dimen/dim_min_heig"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
-        //android:drawableStart="@drawable/ic_lock"
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editPassword"
@@ -50,15 +51,16 @@
             android:layout_height="match_parent"
             app:passwordToggleTint="@color/black"
             app:passwordToggleEnabled="true">
-            //app:endIconMode="password_toggle"
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPassword2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
                 android:textAlignment="center"
+                android:maxLength="15"
                 android:backgroundTint="@color/grey"
                 android:drawableTint="@color/black"
                 android:textColor="@color/black"

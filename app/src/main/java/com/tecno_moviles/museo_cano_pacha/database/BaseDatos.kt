@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.tecno_moviles.museo_cano_pacha.login.Usuario
 import com.tecno_moviles.museo_cano_pacha.ui.favoritos.Favorito
 import com.tecno_moviles.museo_cano_pacha.ui.favoritos.FavoritoDB
 import java.util.ArrayList
@@ -12,12 +13,34 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
 
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_TABLE_FAVS = "CREATE TABLE $TABLE_FAVS ($KEY_USERNAME TEXT, $KEY_ID_QR INTEGER)"
+        val CREATE_TABLE_USERS = "CREATE TABLE $TABLE_USERS ($KEY_USERNAME TEXT, $KEY_PASSWORD TEXT)"
         db.execSQL(CREATE_TABLE_FAVS)
+        db.execSQL(CREATE_TABLE_USERS)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS $TABLE_FAVS")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_USERS")
         onCreate(db)
+    }
+
+    fun registerUser(username: String, password: String) : Long {
+        val database = this.writableDatabase
+        val values = ContentValues()
+        values.put(KEY_USERNAME, username)
+        values.put(KEY_PASSWORD, password)
+        return database.insert(TABLE_USERS, null, values)
+    }
+
+    fun getUser(username: String) : Usuario? {
+        val database = this.readableDatabase
+        val selectionArgument = arrayOf(username)
+        var user : Usuario? = null
+        val pointer = database.query(TABLE_USERS, null, "$KEY_USERNAME = ?", selectionArgument, null, null, null)
+        while (pointer.moveToNext()){
+            user = Usuario(pointer.getString(0), pointer.getString(1))
+        }
+        return user
     }
 
     fun addFav(idQR : Int, username : String) : Long {
@@ -52,10 +75,16 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
 
         // Nombre de tabla
         private const val TABLE_FAVS = "favs"
+        private const val TABLE_USERS = "users"
 
         // Columnas tabla favoritos
         private const val KEY_USERNAME = "username"
         private const val KEY_ID_QR = "id_qr"
+
+        // Columnas tabla usuarios
+        // KEY_USERNAME
+        private const val KEY_PASSWORD = "password"
+
 
         @JvmStatic
         @Synchronized

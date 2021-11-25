@@ -16,6 +16,7 @@ import com.tecno_moviles.museo_cano_pacha.R
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos.Companion.getInstance
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
+import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 
 class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
 
@@ -44,7 +45,7 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
     private fun initFavs () {
 
         val baseDatos = getInstance(context)
-        val lista = baseDatos!!.getFavs("leo")
+        val lista = baseDatos!!.getFavs(SplashActivity.prefs.username.toString())
         favoritosList.clear()
         for (i in lista.indices) {
             if (i % 2 == 0) favoritosList.add(Favorito("mona", "La Giaconda", "soy una descripción", true))
@@ -59,7 +60,7 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
             if (favoritosList[position].esFav) {
                 favoritosList[position].esFav = false
                 it.background = resources.getDrawable(R.drawable.ic_favorite)
-                baseDatos!!.deleteFav(1, "leo")
+                baseDatos!!.deleteFav(1, SplashActivity.prefs.username.toString())
             }
             this.onResume()
         }

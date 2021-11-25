@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentCerrarSesionBinding
 import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
+import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -36,6 +37,7 @@ class CerrarSesionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Timer().schedule(2000) {
+            SplashActivity.prefs.username = null
             activity?.finish()
             startActivity(Intent(activity?.applicationContext, MainLoginActivity::class.java))
         }
