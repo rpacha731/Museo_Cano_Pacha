@@ -18,6 +18,8 @@ class HomeFragment : Fragment() {
 
     private val binding get() = _binding!!
 
+    lateinit var integrator : IntentIntegrator
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,6 +31,8 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        integrator = IntentIntegrator(requireActivity())
+
         return root
     }
 
@@ -38,7 +42,11 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavHomeToFavoritosFragment())
         }
         binding.btnEscanear.setOnClickListener {
-            IntentIntegrator(activity).initiateScan()
+            integrator.setOrientationLocked(false)
+            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+            integrator.setPrompt("Escanea un QR!")
+            integrator.initiateScan()
+//            IntentIntegrator(activity).initiateScan()
         }
         binding.btnVerListado.setOnClickListener {
             Navigation.findNavController(view).navigate(HomeFragmentDirections.actionNavHomeToListadoFragment())
