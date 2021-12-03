@@ -3,9 +3,11 @@ package com.tecno_moviles.museo_cano_pacha.splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.androidnetworking.AndroidNetworking
 import com.tecno_moviles.museo_cano_pacha.R
 import com.tecno_moviles.museo_cano_pacha.database.SharedPref
 import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
+import com.tecno_moviles.museo_cano_pacha.services.NetworkService
 import java.util.*
 
 import kotlin.concurrent.schedule
