@@ -8,7 +8,7 @@
     <View
         android:id="@+id/back_item"
         android:layout_width="match_parent"
-        android:layout_height="101dp"
+        android:layout_height="@dimen/dim_100dp"
         android:background="@color/transparente"
         android:translationZ="@dimen/dim_5dp"
         android:layout_marginEnd="@dimen/dim_60dp"

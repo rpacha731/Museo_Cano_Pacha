@@ -2,6 +2,7 @@ package com.tecno_moviles.museo_cano_pacha.ui.listado
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
+import com.androidnetworking.interfaces.JSONArrayRequestListener
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.tecno_moviles.museo_cano_pacha.R
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
@@ -49,30 +51,31 @@ class ListadoFragment : Fragment(), RecyclerViewOnClickListener {
         recyclerView = view.findViewById(R.id.recyclerListado)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
 
+        progress = view.findViewById(R.id.progressBar)
+
         AndroidNetworking.initialize(context)
-        val listener = object : JSONObjectRequestListener {
-            override fun onResponse(response: JSONObject?) {
 
-                var list : JSONArray? = response?.getJSONArray("items_list")
+        val listener2 = object : JSONArrayRequestListener {
+            override fun onResponse(response: JSONArray?) {
                 listadoList.clear()
-
-                for (aux : JSONObject in list?.toMutableList()!!) {
-                    listadoList.add(Item(Integer.parseInt(aux.get("id").toString()),
-                        aux.get("title").toString(),
-                        aux.get("room_name").toString()))
+                for (aux : JSONObject in response?.toMutableList()!!) {
+                    listadoList.add(
+                        Item(Integer.parseInt(aux.get("id").toString()),
+                            aux.get("title").toString(),
+                            aux.get("roomName").toString(),
+                            aux.get("itemMainPicture").toString()))
                 }
-
                 progress.visibility = View.INVISIBLE
-
                 recyclerView.adapter = ListadoListAdapter(listadoList, this@ListadoFragment)
             }
+
             override fun onError(anError: ANError?) {
-                Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
+                Log.println(Log.ERROR, "ERROR", anError.toString())
             }
         }
 
-        AndroidNetworking.get("https://mocki.io/v1/153d425d-28d3-42f9-9bfa-568dd085ad14")
-            .build().getAsJSONObject(listener)
+        AndroidNetworking.get("http://192.168.1.9:8080/api/items-museo")
+            .build().getAsJSONArray(listener2)
 
         return view
     }

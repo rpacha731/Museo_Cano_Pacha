@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.androidnetworking.widget.ANImageView
 import com.tecno_moviles.museo_cano_pacha.R
+import de.hdodenhof.circleimageview.CircleImageView
 
 class ListadoListAdapter (private val data: List<Item>, private val listener: RecyclerViewOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder> () {
 
@@ -21,8 +23,9 @@ class ListadoListAdapter (private val data: List<Item>, private val listener: Re
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = data[position]
 
-        (holder as ListadoListViewHolder).tituloListado.text = item.title
-        holder.roomName.text = item.room_mame
+        (holder as ListadoListViewHolder).title.text = item.title
+        holder.roomName.text = item.roomName
+        holder.itemMainPicture.setImageUrl(item.itemMainPicture)
     }
 
     override fun getItemCount(): Int = data.size
@@ -30,8 +33,9 @@ class ListadoListAdapter (private val data: List<Item>, private val listener: Re
 }
 
 class ListadoListViewHolder (itemView: View, listener: RecyclerViewOnClickListener) : RecyclerView.ViewHolder(itemView) {
-    var tituloListado : TextView = itemView.findViewById(R.id.tituloLista)
+    var title : TextView = itemView.findViewById(R.id.tituloLista)
     var roomName : TextView = itemView.findViewById(R.id.roomName)
+    var itemMainPicture : ANImageView = itemView.findViewById(R.id.imgItemList)
 
     init {
         itemView.setOnClickListener {
