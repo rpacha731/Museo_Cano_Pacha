@@ -1,4 +1,4 @@
-package com.tecno_moviles.museo_cano_pacha.services
+package com.tecno_moviles.museo_cano_pacha.dto
 
 import com.google.gson.annotations.SerializedName
 
@@ -29,7 +29,9 @@ data class ItemMuseo (
     val item_long: String,
     @SerializedName("item_audio_link")
     val item_audio_link: String
-)
+) {
+
+}
 
 data class ItemGallery (
     @SerializedName("url")

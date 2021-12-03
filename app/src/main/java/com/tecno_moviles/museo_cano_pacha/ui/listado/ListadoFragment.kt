@@ -39,7 +39,12 @@ class ListadoFragment : Fragment(), RecyclerViewOnClickListener {
         savedInstanceState: Bundle?
     ): View? {
 
-        return initListado(inflater, container)
+        val view = initListado(inflater, container)
+
+        progress = view.findViewById(R.id.progressBar)
+
+        return view
+
     }
 
     private fun initListado(inflater: LayoutInflater,
@@ -49,7 +54,7 @@ class ListadoFragment : Fragment(), RecyclerViewOnClickListener {
         recyclerView = view.findViewById(R.id.recyclerListado)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
 
-        progress = view.findViewById(R.id.progressBar)
+
 
         AndroidNetworking.initialize(context)
 
@@ -78,7 +83,7 @@ class ListadoFragment : Fragment(), RecyclerViewOnClickListener {
         return view
     }
 
-//    fun JSONArray.toMutableList(): MutableList<JSONObject> = MutableList(length(), this::getJSONObject)
+    fun JSONArray.toMutableList(): MutableList<JSONObject> = MutableList(length(), this::getJSONObject)
 
     override fun onItemClick(position: Int) {
         flecha = recyclerView[position].findViewById(R.id.viewFlecha)
