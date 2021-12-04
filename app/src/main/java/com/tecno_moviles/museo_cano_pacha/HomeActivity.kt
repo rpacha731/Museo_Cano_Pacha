@@ -1,14 +1,8 @@
 package com.tecno_moviles.museo_cano_pacha
 
-import android.app.Application
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -21,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityHomeBinding
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
-import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
+import com.tecno_moviles.museo_cano_pacha.utils.RESULTADO_QR
 
 class HomeActivity : AppCompatActivity() {
 
@@ -69,7 +63,10 @@ class HomeActivity : AppCompatActivity() {
             if (result.contents == null) {
                 Toast.makeText(this, "Sin resultado", Toast.LENGTH_SHORT).show()
             } else {
-                startActivity(Intent(this, ResultadoActivity::class.java))
+                val intent = Intent(this, ResultadoActivity::class.java).apply {
+                    putExtra(RESULTADO_QR, result.contents.toString())
+                }
+                startActivity(intent)
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)

@@ -16,10 +16,10 @@ import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 
 class LoginFragment : Fragment() {
 
-    private lateinit var btnIngresar : Button
-    private lateinit var txtOlvideContra : TextView
-    private lateinit var editUsuario : EditText
-    private lateinit var editPassword : TextInputEditText
+    private lateinit var btnIngresar: Button
+    private lateinit var txtOlvideContra: TextView
+    private lateinit var editUsuario: EditText
+    private lateinit var editPassword: TextInputEditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,20 +41,23 @@ class LoginFragment : Fragment() {
 
         btnIngresar.setOnClickListener {
 
-            var userTmp = MainLoginActivity.baseDatos.getUser(editUsuario.text.toString())
+            val userTmp = MainLoginActivity.baseDatos.getUser(editUsuario.text.toString())
 
-            if (editUsuario.text.toString() == "" || editUsuario.text.toString() == null) {
-                Toast.makeText(context, "Por favor, ingrese un pinche usuario", Toast.LENGTH_LONG).show()
+            if (editUsuario.text.toString() == "") {
+                Toast.makeText(context, "Por favor, ingrese un pinche usuario", Toast.LENGTH_LONG)
+                    .show()
                 return@setOnClickListener
             }
 
             if (userTmp == null) {
-                Toast.makeText(context, "El usuario no se encuentra registrado", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "El usuario no se encuentra registrado", Toast.LENGTH_LONG)
+                    .show()
                 return@setOnClickListener
             }
 
-            if (editPassword.text.toString() == "" || editPassword.text.toString() == null) {
-                Toast.makeText(context, "Por favor, ingrese la pinche password", Toast.LENGTH_LONG).show()
+            if (editPassword.text.toString() == "") {
+                Toast.makeText(context, "Por favor, ingrese la pinche password", Toast.LENGTH_LONG)
+                    .show()
                 return@setOnClickListener
             }
 
@@ -65,13 +68,15 @@ class LoginFragment : Fragment() {
 
             if (userTmp.password == editPassword.text.toString()) {
                 SplashActivity.prefs.username = userTmp.username
-                Navigation.findNavController(view).navigate(LoginFragmentDirections.actionLoginFragmentToSplashExitoActivity())
+                Navigation.findNavController(view)
+                    .navigate(LoginFragmentDirections.actionLoginFragmentToSplashExitoActivity())
             }
 
         }
 
         txtOlvideContra.setOnClickListener {
-            Navigation.findNavController(view).navigate(LoginFragmentDirections.actionLoginFragmentToRecuperarContrasenaFragment2())
+            Navigation.findNavController(view)
+                .navigate(LoginFragmentDirections.actionLoginFragmentToRecuperarContrasenaFragment2())
         }
     }
 }

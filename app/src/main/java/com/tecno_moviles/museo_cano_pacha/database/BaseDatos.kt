@@ -5,17 +5,12 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.tecno_moviles.museo_cano_pacha.login.Usuario
-import com.tecno_moviles.museo_cano_pacha.ui.favoritos.Favorito
-import com.tecno_moviles.museo_cano_pacha.ui.favoritos.FavoritoDB
-import java.util.ArrayList
 
 class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION){
 
     override fun onCreate(db: SQLiteDatabase) {
-        val CREATE_TABLE_FAVS = "CREATE TABLE $TABLE_FAVS ($KEY_USERNAME TEXT, $KEY_ID_QR INTEGER)"
-        val CREATE_TABLE_USERS = "CREATE TABLE $TABLE_USERS ($KEY_USERNAME TEXT, $KEY_PASSWORD TEXT)"
-        db.execSQL(CREATE_TABLE_FAVS)
-        db.execSQL(CREATE_TABLE_USERS)
+        db.execSQL("CREATE TABLE $TABLE_FAVS ($KEY_USERNAME TEXT, $KEY_ID_QR INTEGER)")
+        db.execSQL("CREATE TABLE $TABLE_USERS ($KEY_USERNAME TEXT, $KEY_PASSWORD TEXT)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -40,6 +35,7 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         while (pointer.moveToNext()){
             user = Usuario(pointer.getString(0), pointer.getString(1))
         }
+        pointer.close()
         return user
     }
 
@@ -57,15 +53,13 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         database.delete(TABLE_FAVS, "$KEY_ID_QR = ? AND $KEY_USERNAME = ?", selectionArgument)
     }
 
-    fun getFavs(username : String) : MutableList<FavoritoDB>{
+    fun isFav(username: String, idQR: String) : Boolean{
         val database = this.readableDatabase
-        val selectionArgument = arrayOf(username)
-        val listaFavs: MutableList<FavoritoDB> = ArrayList()
-        val pointer = database.query(TABLE_FAVS, null, "$KEY_USERNAME = ?", selectionArgument, null, null, null)
-        while (pointer.moveToNext()){
-            listaFavs.add(FavoritoDB(pointer.getInt(1), pointer.getString(0), true))
-        }
-        return listaFavs
+        val selectionArgument = arrayOf(idQR, username)
+        val pointer = database.query(TABLE_FAVS, null, "$KEY_ID_QR = ? AND $KEY_USERNAME = ?", selectionArgument, null, null, null)
+        if (pointer.count == 0) { return false }
+        pointer.close()
+        return true
     }
 
     companion object {

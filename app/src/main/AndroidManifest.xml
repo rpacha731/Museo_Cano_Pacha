@@ -23,7 +23,7 @@
 
         <activity
             android:name=".resultado_qr.ResultadoActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+
             android:exported="true" />
         <activity
             android:name=".splash.SplashActivity"

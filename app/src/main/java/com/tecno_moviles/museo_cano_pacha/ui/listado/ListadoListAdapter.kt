@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.widget.ANImageView
 import com.tecno_moviles.museo_cano_pacha.R
-import de.hdodenhof.circleimageview.CircleImageView
 
 class ListadoListAdapter (private val data: List<Item>, private val listener: RecyclerViewOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder> () {
 

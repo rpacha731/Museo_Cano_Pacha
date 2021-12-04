@@ -1,10 +1,8 @@
 package com.tecno_moviles.museo_cano_pacha.login
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
-import com.tecno_moviles.museo_cano_pacha.database.SharedPref
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityMainLoginBinding
 
 class MainLoginActivity : AppCompatActivity() {
@@ -16,8 +14,7 @@ class MainLoginActivity : AppCompatActivity() {
         lateinit var baseDatos: BaseDatos
 
         fun verifyPassword(password: String): Boolean {
-            for (element in password) {
-                val c = element
+            for (c in password) {
                 // Si no está entre a y z, ni entre A y Z, ni es un espacio
                 if (!(c in 'a'..'z' || c in 'A'..'Z' || c == ' ')) {
                     return true

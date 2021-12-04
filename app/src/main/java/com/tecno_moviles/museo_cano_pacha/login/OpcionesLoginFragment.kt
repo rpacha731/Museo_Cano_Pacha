@@ -9,10 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.tecno_moviles.museo_cano_pacha.R
 
-
 class OpcionesLoginFragment : Fragment() {
-
-
 
     private lateinit var btnIrLogin : Button
     private lateinit var btnIrRegistro : Button

@@ -67,4 +67,9 @@
     <string name="video">Video:</string>
     <string name="latitud">Latitud:</string>
     <string name="longitud">Longitud:</string>
+    <string name="tag1_tag2_tag3">TAG1, TAG2, TAG3</string>
+    <string name="descripcion_extendida">DESCRIPCION EXTENDIDA</string>
+    <string name="link">LINK</string>
+    <string name="links_externos">Links externos:</string>
+    <string name="_1515">1515</string>
 </resources>

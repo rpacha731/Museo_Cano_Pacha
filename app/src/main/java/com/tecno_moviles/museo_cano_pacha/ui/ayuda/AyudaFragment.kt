@@ -22,14 +22,13 @@ class AyudaFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         ayudaViewModel =
             ViewModelProvider(this).get(AyudaViewModel::class.java)
 
         _binding = FragmentAyudaBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

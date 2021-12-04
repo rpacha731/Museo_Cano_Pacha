@@ -38,4 +38,7 @@
     <dimen name="dim_75dp">75dp</dimen>
     <dimen name="dim_90dp">90dp</dimen>
     <dimen name="dim_85dp">85dp</dimen>
+    <dimen name="dim_40sp">40sp</dimen>
+    <dimen name="dim_225dp">225dp</dimen>
+    <dimen name="dim_360dp">360dp</dimen>
 </resources>

@@ -5,41 +5,39 @@
     android:layout_height="wrap_content"
     android:background="@color/white">
 
-    <View
-        android:id="@+id/back_item"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dim_100dp"
-        android:background="@color/transparente"
-        android:translationZ="@dimen/dim_5dp"
-        android:layout_marginEnd="@dimen/dim_60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgItemFavo"
-        android:layout_width="@dimen/dim_100dp"
-        android:layout_height="@dimen/dim_100dp"
-        android:layout_marginLeft="@dimen/dim_15dp"
-        android:layout_marginTop="@dimen/dim_5dp"
+    <com.androidnetworking.widget.ANImageView
+        android:id="@+id/imgFav"
+        android:layout_width="@dimen/dim_80dp"
+        android:layout_height="@dimen/dim_80dp"
+        android:layout_marginStart="@dimen/dim_10dp"
         android:layout_marginBottom="@dimen/dim_5dp"
-        android:src="@drawable/mona"
-        app:civ_border_color="@color/transparente"
+        android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/backItem"
+        android:layout_width="@dimen/dim_360dp"
+        android:layout_height="@dimen/dim_100dp"
+        android:background="@color/transparente"
+        android:translationZ="@dimen/dim_5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="@dimen/dim_210dp"
+        android:layout_width="260dp"
         android:layout_height="@dimen/dim_80dp"
-        android:layout_marginLeft="@dimen/dim_20dp"
+        android:layout_marginStart="@dimen/dim_100dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imgItemFavo"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tituloItemFavo"
+            android:id="@+id/titleFav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/george_bold"
@@ -53,12 +51,28 @@
             android:background="@color/grey" />
 
         <TextView
-            android:id="@+id/descripItemFavo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_descrip_item_fav" />
+            android:text="@string/StringDescListado" />
+
+        <TextView
+            android:id="@+id/roomNamee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/room_name"
+            android:textAlignment="center"/>
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/back_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_100dp"
+        android:background="@color/transparente"
+        android:translationZ="@dimen/dim_5dp"
+        android:layout_marginEnd="@dimen/dim_60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/viewCorazon"

@@ -14,9 +14,9 @@ import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 
 class RegistroFragment : Fragment() {
 
-    private lateinit var btnRegistro : Button
-    private lateinit var editRegisUsuario : EditText
-    private lateinit var editRegisPassword : EditText
+    private lateinit var btnRegistro: Button
+    private lateinit var editRegisUsuario: EditText
+    private lateinit var editRegisPassword: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,24 +38,40 @@ class RegistroFragment : Fragment() {
         btnRegistro.setOnClickListener {
 
             if (editRegisUsuario.text.length > 10 || editRegisUsuario.text.length < 3) {
-                Toast.makeText(context, "El nombre de usuario debe tener menos de 10 y más de 3 caracteres", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    context,
+                    "El nombre de usuario debe tener menos de 10 y más de 3 caracteres",
+                    Toast.LENGTH_LONG
+                ).show()
                 return@setOnClickListener
             }
 
             if (editRegisPassword.text.length > 15 || editRegisPassword.text.length <= 7) {
-                Toast.makeText(context, "La password debe tener menos de 15 y más de 8 caracteres", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    context,
+                    "La password debe tener menos de 15 y más de 8 caracteres",
+                    Toast.LENGTH_LONG
+                ).show()
                 return@setOnClickListener
             } else {
                 if (!MainLoginActivity.verifyPassword(editRegisPassword.text.toString())) {
-                    Toast.makeText(context, "La password debe tener al menos un numero o caracter especial", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        context,
+                        "La password debe tener al menos un numero o caracter especial",
+                        Toast.LENGTH_LONG
+                    ).show()
                     return@setOnClickListener
                 }
             }
 
-            MainLoginActivity.baseDatos.registerUser(editRegisUsuario.text.toString(), editRegisPassword.text.toString())
+            MainLoginActivity.baseDatos.registerUser(
+                editRegisUsuario.text.toString(),
+                editRegisPassword.text.toString()
+            )
             SplashActivity.prefs.username = editRegisUsuario.text.toString()
 
-            Navigation.findNavController(view).navigate(RegistroFragmentDirections.actionRegistroFragmentToSplashExitoActivity())
+            Navigation.findNavController(view)
+                .navigate(RegistroFragmentDirections.actionRegistroFragmentToSplashExitoActivity())
         }
     }
 }
