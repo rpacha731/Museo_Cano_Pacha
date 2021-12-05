@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dim_20dp"
         android:fontFamily="@font/george_semibold"
-        android:text="@string/juan_carlos"
+        android:text="@string/nombre_usuario"
         android:textColor="@color/black"
         android:textSize="@dimen/dim_50sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,5 +1,6 @@
 package com.tecno_moviles.museo_cano_pacha.ui.conf
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.tecno_moviles.museo_cano_pacha.database.SharedPref
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentConfBinding
+import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 
 class ConfFragment : Fragment() {
 
@@ -15,6 +18,9 @@ class ConfFragment : Fragment() {
     private var _binding: FragmentConfBinding? = null
 
     private val binding get() = _binding!!
+    //companion object {
+      //  lateinit var prefs: SharedPref
+    //}
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,15 +40,37 @@ class ConfFragment : Fragment() {
         binding.switch1.setOnClickListener {
             binding.switch1.isChecked = !binding.switch1.isChecked
         }
+        //SplashActivity.prefs = SharedPref(applicationContext)
+        //binding.inputNombre.text = prefs.username
 
         binding.edit1.setOnClickListener {
-            binding.inputNombre.isEnabled = true
+            if (binding.inputNombre.isEnabled) {
+                binding.inputNombre.isEnabled = false
+                binding.inputNombre.setHintTextColor(Color.GRAY)
+            } else {
+                binding.inputNombre.isEnabled = true
+                binding.inputNombre.setHintTextColor(Color.BLACK)
+            }
         }
+
         binding.edit2.setOnClickListener {
-            binding.inputMail.isEnabled = true
+            if (binding.inputMail.isEnabled) {
+                binding.inputMail.isEnabled = false
+                binding.inputMail.setHintTextColor(Color.GRAY)
+            } else {
+                binding.inputMail.isEnabled = true
+                binding.inputMail.setHintTextColor(Color.BLACK)
+            }
         }
+
         binding.edit3.setOnClickListener {
-            binding.inputPassword.isEnabled = true
+            if (binding.inputPassword.isEnabled) {
+                binding.inputPassword.isEnabled = false
+                binding.inputPassword.setHintTextColor(Color.GRAY)
+            } else {
+                binding.inputPassword.isEnabled = true
+                binding.inputPassword.setHintTextColor(Color.BLACK)
+            }
         }
 
         binding.btnGuardarConf.setOnClickListener {
