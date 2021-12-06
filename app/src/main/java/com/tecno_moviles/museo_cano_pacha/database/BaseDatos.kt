@@ -10,7 +10,7 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("CREATE TABLE $TABLE_FAVS ($KEY_USERNAME TEXT, $KEY_ID_QR INTEGER)")
-        db.execSQL("CREATE TABLE $TABLE_USERS ($KEY_USERNAME TEXT, $KEY_PASSWORD TEXT)")
+        db.execSQL("CREATE TABLE $TABLE_USERS ($KEY_USERNAME TEXT, $KEY_PASSWORD TEXT, $KEY_EMAIL TEXT, $KEY_NOMBRE TEXT)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -19,11 +19,13 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         onCreate(db)
     }
 
-    fun registerUser(username: String, password: String) : Long {
+    fun registerUser(user : Usuario) : Long {
         val database = this.writableDatabase
         val values = ContentValues()
-        values.put(KEY_USERNAME, username)
-        values.put(KEY_PASSWORD, password)
+        values.put(KEY_USERNAME, user.username)
+        values.put(KEY_PASSWORD, user.password)
+        values.put(KEY_EMAIL, user.email)
+        values.put(KEY_NOMBRE, user.nombre)
         return database.insert(TABLE_USERS, null, values)
     }
 
@@ -33,7 +35,7 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         var user : Usuario? = null
         val pointer = database.query(TABLE_USERS, null, "$KEY_USERNAME = ?", selectionArgument, null, null, null)
         while (pointer.moveToNext()){
-            user = Usuario(pointer.getString(0), pointer.getString(1))
+            user = Usuario(pointer.getString(0), pointer.getString(1), pointer.getString(2), pointer.getString(3))
         }
         pointer.close()
         return user
@@ -78,6 +80,8 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         // Columnas tabla usuarios
         // KEY_USERNAME
         private const val KEY_PASSWORD = "password"
+        private const val KEY_EMAIL = "email"
+        private const val KEY_NOMBRE = "nombre"
 
 
         @JvmStatic

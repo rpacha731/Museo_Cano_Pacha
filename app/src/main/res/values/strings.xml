@@ -25,8 +25,7 @@
     <string name="txt_recuperar_contra">Recuperar contraseña</string>
     <string name="hint_email_edit">Email</string>
     <string name="txt_recuperar_btn">Recuperar</string>
-    <string name="hint_nombre">Nombre</string>
-    <string name="hint_apellido">Apellido</string>
+    <string name="hint_nombre">Nombre y Apellido</string>
     <string name="txt_bienvenido">Bienvenid@</string>
     <string name="txt_muchos_museos">Te esperan muchos museos\npor conocer!</string>
     <string name="escaner_qr">Escáner QR</string>

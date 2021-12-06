@@ -17,6 +17,8 @@ class RegistroFragment : Fragment() {
     private lateinit var btnRegistro: Button
     private lateinit var editRegisUsuario: EditText
     private lateinit var editRegisPassword: EditText
+    private lateinit var editRegisNombre: EditText
+    private lateinit var editRegisEmail: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +30,8 @@ class RegistroFragment : Fragment() {
         btnRegistro = view.findViewById(R.id.btnRegistrar)
         editRegisUsuario = view.findViewById(R.id.editRegisUsuario)
         editRegisPassword = view.findViewById(R.id.editRegisPassword)
+        editRegisNombre = view.findViewById(R.id.editRegisNombreApellido)
+        editRegisEmail = view.findViewById(R.id.editRegisMail)
 
         return view
     }
@@ -65,8 +69,10 @@ class RegistroFragment : Fragment() {
             }
 
             MainLoginActivity.baseDatos.registerUser(
-                editRegisUsuario.text.toString(),
-                editRegisPassword.text.toString()
+                Usuario(editRegisUsuario.text.toString(),
+                editRegisPassword.text.toString(),
+                editRegisNombre.text.toString(),
+                editRegisEmail.text.toString())
             )
             SplashActivity.prefs.username = editRegisUsuario.text.toString()
 

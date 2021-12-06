@@ -19,6 +19,7 @@
         app:civ_border_width="@dimen/dim_0dp" />
 
     <TextView
+        android:id="@+id/drawerUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/dim_10dp"
