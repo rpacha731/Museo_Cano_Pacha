@@ -64,6 +64,15 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         return true
     }
 
+    fun cantidadFav(username: String) : Int {
+        val database = this.readableDatabase
+        val selectionArgument = arrayOf(username)
+        val pointer = database.query(TABLE_FAVS, null, "$KEY_USERNAME = ?", selectionArgument, null, null, null)
+        val aux = pointer.count
+        pointer.close()
+        return aux
+    }
+
     companion object {
         private var databaseInstance: BaseDatos? = null
         const val DATABASE_VERSION = 1

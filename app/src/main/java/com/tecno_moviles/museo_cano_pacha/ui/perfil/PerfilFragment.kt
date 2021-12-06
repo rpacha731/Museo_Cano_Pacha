@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
+import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentPerfilBinding
 import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 import com.tecno_moviles.museo_cano_pacha.ui.favoritos.FavoritosListAdapter
@@ -45,11 +46,12 @@ class PerfilFragment : Fragment() {
                 .navigate(PerfilFragmentDirections.actionNavPerfilToFavoritosFragment())
         }
 
+        val baseDatos = BaseDatos.getInstance(context)
         AndroidNetworking.initialize(context)
 
         val listener2 = object : JSONArrayRequestListener {
             override fun onResponse(response: JSONArray?) {
-                //variableCantidadQRS = response!!.length()
+                binding.textTotalQrsNumber.text = response!!.length().toString()
             }
 
             override fun onError(anError: ANError?) {
@@ -59,7 +61,10 @@ class PerfilFragment : Fragment() {
 
         AndroidNetworking.get("http://192.168.1.9:8080/api/items-museo")
             .build().getAsJSONArray(listener2)
-        binding.nombrePerfl.setText(SplashActivity.prefs.username)
+
+        binding.nombrePerfl.text = SplashActivity.prefs.username
+
+        binding.textQrsFavNumber.text = baseDatos!!.cantidadFav(SplashActivity.prefs.username!!).toString()
     }
 
     override fun onDestroyView() {

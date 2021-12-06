@@ -3,6 +3,8 @@ package com.tecno_moviles.museo_cano_pacha
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -15,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.tecno_moviles.museo_cano_pacha.databinding.ActivityHomeBinding
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
+import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 import com.tecno_moviles.museo_cano_pacha.utils.RESULTADO_QR
 
 class HomeActivity : AppCompatActivity() {
@@ -29,6 +32,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
+
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
@@ -44,6 +48,19 @@ class HomeActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        val headerView = binding.navView.getHeaderView(0)
+        headerView.findViewById<TextView>(R.id.drawerUsername).text = SplashActivity.prefs.username
+        headerView.findViewById<TextView>(R.id.drawerUserMail).text = SplashActivity.prefs.userEmail
+
+//        println(+ "####################")
+
+//        binding.drawerLayout.on
+//            .setOnClickListener {
+//            println(it.findViewById<TextView>(R.id.drawerUsername))
+//        }
+//        println(binding.drawerLayout.findViewById<TextView>(R.id.drawerUsername))
+//        drawerLayout.findViewById<TextView>().text = SplashActivity.prefs.username!!
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

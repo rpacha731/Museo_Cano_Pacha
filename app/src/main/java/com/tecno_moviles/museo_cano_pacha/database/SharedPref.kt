@@ -11,4 +11,7 @@ class SharedPref(context: Context) {
         get() = prefs.getString("username", "")
         set(value) = prefs.edit().putString("username", value).apply()
 
+    var userEmail: String?
+        get() = prefs.getString("userEmail", "")
+        set(value) = prefs.edit().putString("userEmail", value).apply()
 }

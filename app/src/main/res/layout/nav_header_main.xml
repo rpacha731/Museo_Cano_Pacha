@@ -27,7 +27,7 @@
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/drawerUserMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/dim_5dp"
