@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
 import com.tecno_moviles.museo_cano_pacha.database.SharedPref
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentConfBinding
 import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
@@ -18,9 +19,6 @@ class ConfFragment : Fragment() {
     private var _binding: FragmentConfBinding? = null
 
     private val binding get() = _binding!!
-    //companion object {
-      //  lateinit var prefs: SharedPref
-    //}
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,8 +38,14 @@ class ConfFragment : Fragment() {
         binding.switch1.setOnClickListener {
             binding.switch1.isChecked = !binding.switch1.isChecked
         }
-        //SplashActivity.prefs = SharedPref(applicationContext)
-        //binding.inputNombre.text = prefs.username
+
+        val baseDatos = BaseDatos.getInstance(context)
+        val user = baseDatos!!.getUser(SplashActivity.prefs.username.toString())
+
+        //binding.inputNombre.hint = user!!.name
+        binding.inputUsername.hint = SplashActivity.prefs.username
+        binding.inputPassword.hint = user!!.password
+
 
         binding.edit1.setOnClickListener {
             if (binding.inputNombre.isEnabled) {
@@ -49,17 +53,19 @@ class ConfFragment : Fragment() {
                 binding.inputNombre.setHintTextColor(Color.GRAY)
             } else {
                 binding.inputNombre.isEnabled = true
+                //binding.inputNombre.hint = user!!.name
                 binding.inputNombre.setHintTextColor(Color.BLACK)
             }
         }
 
         binding.edit2.setOnClickListener {
-            if (binding.inputMail.isEnabled) {
-                binding.inputMail.isEnabled = false
-                binding.inputMail.setHintTextColor(Color.GRAY)
+            if (binding.inputUsername.isEnabled) {
+                binding.inputUsername.isEnabled = false
+                binding.inputUsername.setHintTextColor(Color.GRAY)
             } else {
-                binding.inputMail.isEnabled = true
-                binding.inputMail.setHintTextColor(Color.BLACK)
+                binding.inputUsername.isEnabled = true
+                binding.inputUsername.hint = SplashActivity.prefs.username
+                binding.inputUsername.setHintTextColor(Color.BLACK)
             }
         }
 
@@ -69,13 +75,14 @@ class ConfFragment : Fragment() {
                 binding.inputPassword.setHintTextColor(Color.GRAY)
             } else {
                 binding.inputPassword.isEnabled = true
+                binding.inputPassword.hint = user!!.password
                 binding.inputPassword.setHintTextColor(Color.BLACK)
             }
         }
 
         binding.btnGuardarConf.setOnClickListener {
             binding.inputNombre.isEnabled = false
-            binding.inputMail.isEnabled = false
+            binding.inputUsername.isEnabled = false
             binding.inputPassword.isEnabled = false
 
             Navigation.findNavController(view).navigate(ConfFragmentDirections.actionNavConfToNavHome())

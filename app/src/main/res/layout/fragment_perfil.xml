@@ -43,20 +43,20 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <TextView
-        android:id="@+id/text_qr_scan"
+        android:id="@+id/text_qrs_fav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/george_bold"
-        android:text="@string/qrs_escaneados"
+        android:text="@string/qrs_favoritos"
         android:textColor="@color/purple_700"
         android:textSize="@dimen/dim_20sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_qr_scan_number"
+        app:layout_constraintBottom_toTopOf="@+id/text_qrs_fav_number"
         app:layout_constraintEnd_toStartOf="@+id/view2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <TextView
-        android:id="@+id/text_qr_scan_number"
+        android:id="@+id/text_qrs_fav_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/george_bold"
@@ -66,7 +66,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/view2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_qr_scan" />
+        app:layout_constraintTop_toBottomOf="@+id/text_qrs_fav" />
 
     <View
         android:id="@+id/view2"
@@ -80,20 +80,20 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/text_qr_no_scan"
+        android:id="@+id/text_total_qrs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/george_bold"
-        android:text="@string/qrs_no_escaneados"
+        android:text="@string/total_qrs"
         android:textColor="@color/purple_700"
         android:textSize="@dimen/dim_20sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_qr_no_scan_number"
+        app:layout_constraintBottom_toTopOf="@+id/text_total_qrs_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <TextView
-        android:id="@+id/text_qr_no_scan_number"
+        android:id="@+id/text_total_qrs_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/george_bold"
@@ -103,7 +103,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/text_qr_no_scan" />
+        app:layout_constraintTop_toBottomOf="@+id/text_total_qrs" />
 
     <View
         android:id="@+id/view"

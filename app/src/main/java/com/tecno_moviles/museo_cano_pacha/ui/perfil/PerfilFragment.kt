@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentPerfilBinding
+import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 
 class PerfilFragment : Fragment() {
 
@@ -34,6 +35,8 @@ class PerfilFragment : Fragment() {
         binding.btnPerfilFav.setOnClickListener {
             Navigation.findNavController(view).navigate(PerfilFragmentDirections.actionNavPerfilToFavoritosFragment())
         }
+
+        binding.nombrePerfl.setText(SplashActivity.prefs.username)
     }
 
     override fun onDestroyView() {
