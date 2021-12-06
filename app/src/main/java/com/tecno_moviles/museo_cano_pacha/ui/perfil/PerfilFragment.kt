@@ -59,6 +59,7 @@ class PerfilFragment : Fragment() {
 
         AndroidNetworking.get("http://192.168.1.9:8080/api/items-museo")
             .build().getAsJSONArray(listener2)
+        binding.nombrePerfl.setText(SplashActivity.prefs.username)
     }
 
     override fun onDestroyView() {

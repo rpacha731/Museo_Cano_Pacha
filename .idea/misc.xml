@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_splash.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_splash_exito.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_conf.xml" value="0.25" />
+        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_perfil.xml" value="0.14166666666666666" />
+        <entry key="..\:/Users/Cano_/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/fragment_registro.xml" value="0.21" />
         <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout-w936dp/item_view_listado.xml" value="0.1" />
         <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_home.xml" value="0.1644021739130435" />
         <entry key="..\:/Users/leone/Desktop/Museo_Cano_Pacha/app/src/main/res/layout/activity_main_login.xml" value="0.1644021739130435" />

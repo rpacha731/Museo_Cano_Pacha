@@ -41,17 +41,17 @@
     <string name="version">Versión 1.0.0</string>
     <string name="apellidos">Cano, Pacha</string>
     <string name="juan_carlos">Juan Carlos</string>
-    <string name="qrs_escaneados">QRs escaneados</string>
+    <string name="qrs_favoritos">Número de favoritos</string>
     <string name="_8">8</string>
-    <string name="qrs_no_escaneados">QRs no escaneados</string>
+    <string name="total_qrs">Total QRs</string>
     <string name="_21">21</string>
     <string name="compartir_mi_perfil">Compartir mi perfil</string>
     <string name="cerrando_sesion">Cerrando sesión!</string>
     <string name="nombre">Nombre</string>
-    <string name="juancarlos_gmail_com">juancarlos@gmail.com</string>
+    <string name="nombre_usuario">Jcarlos1</string>
     <string name="hint_asterisco">******************</string>
     <string name="guardar">Guardar</string>
-    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="usuario">Nombre de usuario</string>
     <string name="notificaciones">Notificaciones</string>
     <string name="favoritos">Favoritos</string>
     <!-- TODO: Remove or change this placeholder text -->
