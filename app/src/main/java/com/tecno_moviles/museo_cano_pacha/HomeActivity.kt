@@ -25,6 +25,14 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
 
+    companion object {
+        private lateinit var headerView: View
+        fun updateDrawer (username : String, email : String) {
+            headerView.findViewById<TextView>(R.id.drawerUsername).text = SplashActivity.prefs.username
+            headerView.findViewById<TextView>(R.id.drawerUserMail).text = SplashActivity.prefs.userEmail
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -49,18 +57,9 @@ class HomeActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        val headerView = binding.navView.getHeaderView(0)
+        headerView = binding.navView.getHeaderView(0)
         headerView.findViewById<TextView>(R.id.drawerUsername).text = SplashActivity.prefs.username
         headerView.findViewById<TextView>(R.id.drawerUserMail).text = SplashActivity.prefs.userEmail
-
-//        println(+ "####################")
-
-//        binding.drawerLayout.on
-//            .setOnClickListener {
-//            println(it.findViewById<TextView>(R.id.drawerUsername))
-//        }
-//        println(binding.drawerLayout.findViewById<TextView>(R.id.drawerUsername))
-//        drawerLayout.findViewById<TextView>().text = SplashActivity.prefs.username!!
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

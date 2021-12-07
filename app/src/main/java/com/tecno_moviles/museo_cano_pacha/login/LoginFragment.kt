@@ -68,6 +68,7 @@ class LoginFragment : Fragment() {
 
             if (userTmp.password == editPassword.text.toString()) {
                 SplashActivity.prefs.username = userTmp.username
+                SplashActivity.prefs.userEmail = userTmp.email
                 Navigation.findNavController(view)
                     .navigate(LoginFragmentDirections.actionLoginFragmentToSplashExitoActivity())
             }

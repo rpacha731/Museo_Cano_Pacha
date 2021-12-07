@@ -69,12 +69,15 @@ class RegistroFragment : Fragment() {
             }
 
             MainLoginActivity.baseDatos.registerUser(
-                Usuario(editRegisUsuario.text.toString(),
-                editRegisPassword.text.toString(),
-                editRegisNombre.text.toString(),
-                editRegisEmail.text.toString())
+                Usuario(
+                    editRegisUsuario.text.toString(),
+                    editRegisPassword.text.toString(),
+                    editRegisEmail.text.toString(),
+                    editRegisNombre.text.toString()
+                )
             )
             SplashActivity.prefs.username = editRegisUsuario.text.toString()
+            SplashActivity.prefs.userEmail = editRegisEmail.text.toString()
 
             Navigation.findNavController(view)
                 .navigate(RegistroFragmentDirections.actionRegistroFragmentToSplashExitoActivity())

@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.tecno_moviles.museo_cano_pacha.HomeActivity
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
 import com.tecno_moviles.museo_cano_pacha.database.SharedPref
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentConfBinding
+import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
 import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 
 class ConfFragment : Fragment() {
@@ -40,43 +43,42 @@ class ConfFragment : Fragment() {
         }
 
         val baseDatos = BaseDatos.getInstance(context)
-        val user = baseDatos!!.getUser(SplashActivity.prefs.username.toString())
+        var user = baseDatos!!.getUser(SplashActivity.prefs.username.toString())
 
-        //binding.inputNombre.hint = user!!.name
-        binding.inputUsername.hint = SplashActivity.prefs.username
-        binding.inputPassword.hint = user!!.password
-
+        binding.inputNombre.setText(user!!.nombre)
+        binding.inputUsername.setText(user!!.username)
+        binding.inputPassword.setText(user!!.password)
+        binding.inputNombre.setTextColor(Color.GRAY)
+        binding.inputUsername.setTextColor(Color.GRAY)
+        binding.inputPassword.setTextColor(Color.GRAY)
 
         binding.edit1.setOnClickListener {
             if (binding.inputNombre.isEnabled) {
                 binding.inputNombre.isEnabled = false
-                binding.inputNombre.setHintTextColor(Color.GRAY)
+                binding.inputNombre.setTextColor(Color.GRAY)
             } else {
                 binding.inputNombre.isEnabled = true
-                //binding.inputNombre.hint = user!!.name
-                binding.inputNombre.setHintTextColor(Color.BLACK)
+                binding.inputNombre.setTextColor(Color.BLACK)
             }
         }
 
         binding.edit2.setOnClickListener {
             if (binding.inputUsername.isEnabled) {
                 binding.inputUsername.isEnabled = false
-                binding.inputUsername.setHintTextColor(Color.GRAY)
+                binding.inputUsername.setTextColor(Color.GRAY)
             } else {
                 binding.inputUsername.isEnabled = true
-                binding.inputUsername.hint = SplashActivity.prefs.username
-                binding.inputUsername.setHintTextColor(Color.BLACK)
+                binding.inputUsername.setTextColor(Color.BLACK)
             }
         }
 
         binding.edit3.setOnClickListener {
             if (binding.inputPassword.isEnabled) {
                 binding.inputPassword.isEnabled = false
-                binding.inputPassword.setHintTextColor(Color.GRAY)
+                binding.inputPassword.setTextColor(Color.GRAY)
             } else {
                 binding.inputPassword.isEnabled = true
-                binding.inputPassword.hint = user!!.password
-                binding.inputPassword.setHintTextColor(Color.BLACK)
+                binding.inputPassword.setTextColor(Color.BLACK)
             }
         }
 
@@ -84,8 +86,51 @@ class ConfFragment : Fragment() {
             binding.inputNombre.isEnabled = false
             binding.inputUsername.isEnabled = false
             binding.inputPassword.isEnabled = false
+            binding.inputNombre.setTextColor(Color.GRAY)
+            binding.inputUsername.setTextColor(Color.GRAY)
+            binding.inputPassword.setTextColor(Color.GRAY)
 
-            Navigation.findNavController(view).navigate(ConfFragmentDirections.actionNavConfToNavHome())
+            if (binding.inputUsername.text.length > 10 || binding.inputUsername.text.length < 3) {
+                Toast.makeText(
+                    context,
+                    "El nombre de usuario debe tener menos de 10 y más de 3 caracteres",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@setOnClickListener
+            }
+
+            if (binding.inputPassword.text.length > 15 || binding.inputPassword.text.length <= 7) {
+                Toast.makeText(
+                    context,
+                    "La password debe tener menos de 15 y más de 8 caracteres",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@setOnClickListener
+            } else {
+                if (!MainLoginActivity.verifyPassword(binding.inputPassword.text.toString())) {
+                    Toast.makeText(
+                        context,
+                        "La password debe tener al menos un numero o caracter especial",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    return@setOnClickListener
+                }
+            }
+
+            val usernameOld = SplashActivity.prefs.username
+            SplashActivity.prefs.username = binding.inputUsername.text.toString()
+            user.username = binding.inputUsername.text.toString()
+
+            user.password = binding.inputPassword.text.toString()
+
+            user.nombre = binding.inputNombre.text.toString()
+
+            baseDatos.updateUser(user, usernameOld!!)
+
+            HomeActivity.updateDrawer(user.username!!, user.email!!)
+
+            Toast.makeText(context, "Se guardaron los datos correctamente", Toast.LENGTH_LONG).show()
+//            Navigation.findNavController(view).navigate(ConfFragmentDirections.actionNavConfToNavHome())
         }
     }
 

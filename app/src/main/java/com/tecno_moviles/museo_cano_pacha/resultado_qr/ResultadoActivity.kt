@@ -120,7 +120,7 @@ class ResultadoActivity : AppCompatActivity() {
             }
         }
 
-        AndroidNetworking.get("http://192.168.1.9:8080/api/item-museo?qr=$qr")
+        AndroidNetworking.get("http://192.168.1.6:8080/api/item-museo?qr=$qr")
             .build().getAsJSONObject(listener)
 
 

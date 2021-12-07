@@ -29,6 +29,16 @@ class BaseDatos (context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, n
         return database.insert(TABLE_USERS, null, values)
     }
 
+    fun updateUser(user : Usuario, usernameOld : String) : Int {
+        val database = this.writableDatabase
+        val values = ContentValues()
+        values.put(KEY_USERNAME, user.username)
+        values.put(KEY_PASSWORD, user.password)
+        values.put(KEY_EMAIL, user.email)
+        values.put(KEY_NOMBRE, user.nombre)
+        return database.update(TABLE_USERS, values, "$KEY_USERNAME = ?", arrayOf(usernameOld))
+    }
+
     fun getUser(username: String) : Usuario? {
         val database = this.readableDatabase
         val selectionArgument = arrayOf(username)
