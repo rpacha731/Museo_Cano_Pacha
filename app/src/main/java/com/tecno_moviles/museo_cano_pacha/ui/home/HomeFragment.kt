@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.google.zxing.integration.android.IntentIntegrator
+import com.tecno_moviles.museo_cano_pacha.HomeActivity
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

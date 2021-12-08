@@ -15,11 +15,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
+import com.tecno_moviles.museo_cano_pacha.HomeActivity
 import com.tecno_moviles.museo_cano_pacha.R
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos.Companion.getInstance
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity
 import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 import com.tecno_moviles.museo_cano_pacha.ui.listado.Item
+import com.tecno_moviles.museo_cano_pacha.utils.IP
 import com.tecno_moviles.museo_cano_pacha.utils.RESULTADO_QR
 import org.json.JSONArray
 import org.json.JSONObject
@@ -81,7 +83,7 @@ class FavoritosFragment : Fragment(), RecyclerViewOnClickListener {
             }
         }
 
-        AndroidNetworking.get("http://192.168.1.9:8080/api/items-museo")
+        AndroidNetworking.get("http://$IP:8080/api/items-museo")
             .build().getAsJSONArray(listener2)
 
     }
