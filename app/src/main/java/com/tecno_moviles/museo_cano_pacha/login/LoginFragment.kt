@@ -31,7 +31,7 @@ class LoginFragment : Fragment() {
         btnIngresar = view.findViewById(R.id.btnIngresar)
         txtOlvideContra = view.findViewById(R.id.btnOlvideContra)
         editUsuario = view.findViewById(R.id.editUsuario)
-        editPassword = view.findViewById(R.id.editPassword2)
+        editPassword = view.findViewById(R.id.inputPassword2)
 
         return view
     }

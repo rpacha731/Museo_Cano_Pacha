@@ -49,6 +49,8 @@
     <string name="cerrando_sesion">Cerrando sesión!</string>
     <string name="nombre">Nombre</string>
     <string name="nombre_usuario">Jcarlos1</string>
+    <string name="mail">Correo electrónico</string>
+    <string name="mail2">jcarlos1@gmail.com</string>
     <string name="hint_asterisco">******************</string>
     <string name="guardar">Guardar</string>
     <string name="usuario">Nombre de usuario</string>

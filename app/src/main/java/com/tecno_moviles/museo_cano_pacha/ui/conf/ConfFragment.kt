@@ -38,19 +38,21 @@ class ConfFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.switch1.setOnClickListener {
-            binding.switch1.isChecked = !binding.switch1.isChecked
-        }
+        //binding.switch1.setOnClickListener {
+        //    binding.switch1.isChecked = !binding.switch1.isChecked
+        //}
 
         val baseDatos = BaseDatos.getInstance(context)
-        var user = baseDatos!!.getUser(SplashActivity.prefs.username.toString())
+        val user = baseDatos!!.getUser(SplashActivity.prefs.username.toString())
 
         binding.inputNombre.setText(user!!.nombre)
         binding.inputUsername.setText(user!!.username)
-        binding.inputPassword.setText(user!!.password)
+        binding.inputPassword2.setText(user!!.password)
+        binding.inputMail.setText(user!!.email)
         binding.inputNombre.setTextColor(Color.GRAY)
         binding.inputUsername.setTextColor(Color.GRAY)
-        binding.inputPassword.setTextColor(Color.GRAY)
+        binding.inputPassword2.setTextColor(Color.GRAY)
+        binding.inputMail.setTextColor(Color.GRAY)
 
         binding.edit1.setOnClickListener {
             if (binding.inputNombre.isEnabled) {
@@ -73,22 +75,34 @@ class ConfFragment : Fragment() {
         }
 
         binding.edit3.setOnClickListener {
-            if (binding.inputPassword.isEnabled) {
-                binding.inputPassword.isEnabled = false
-                binding.inputPassword.setTextColor(Color.GRAY)
+            if (binding.inputPassword2.isEnabled) {
+                binding.inputPassword2.isEnabled = false
+                binding.inputPassword2.setTextColor(Color.GRAY)
             } else {
-                binding.inputPassword.isEnabled = true
-                binding.inputPassword.setTextColor(Color.BLACK)
+                binding.inputPassword2.isEnabled = true
+                binding.inputPassword2.setTextColor(Color.BLACK)
+            }
+        }
+
+        binding.edit4.setOnClickListener {
+            if (binding.inputMail.isEnabled) {
+                binding.inputMail.isEnabled = false
+                binding.inputMail.setTextColor(Color.GRAY)
+            } else {
+                binding.inputMail.isEnabled = true
+                binding.inputMail.setTextColor(Color.BLACK)
             }
         }
 
         binding.btnGuardarConf.setOnClickListener {
             binding.inputNombre.isEnabled = false
             binding.inputUsername.isEnabled = false
-            binding.inputPassword.isEnabled = false
+            binding.inputPassword2.isEnabled = false
+            binding.inputMail.isEnabled = false
             binding.inputNombre.setTextColor(Color.GRAY)
             binding.inputUsername.setTextColor(Color.GRAY)
-            binding.inputPassword.setTextColor(Color.GRAY)
+            binding.inputPassword2.setTextColor(Color.GRAY)
+            binding.inputMail.setTextColor(Color.GRAY)
 
             if (binding.inputUsername.text.length > 10 || binding.inputUsername.text.length < 3) {
                 Toast.makeText(
@@ -99,7 +113,7 @@ class ConfFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            if (binding.inputPassword.text.length > 15 || binding.inputPassword.text.length <= 7) {
+            if (binding.inputPassword2.text!!.length > 15 || binding.inputPassword2.text!!.length <= 7) {
                 Toast.makeText(
                     context,
                     "La password debe tener menos de 15 y más de 8 caracteres",
@@ -107,7 +121,7 @@ class ConfFragment : Fragment() {
                 ).show()
                 return@setOnClickListener
             } else {
-                if (!MainLoginActivity.verifyPassword(binding.inputPassword.text.toString())) {
+                if (!MainLoginActivity.verifyPassword(binding.inputPassword2.text.toString())) {
                     Toast.makeText(
                         context,
                         "La password debe tener al menos un numero o caracter especial",
@@ -121,9 +135,11 @@ class ConfFragment : Fragment() {
             SplashActivity.prefs.username = binding.inputUsername.text.toString()
             user.username = binding.inputUsername.text.toString()
 
-            user.password = binding.inputPassword.text.toString()
+            user.password = binding.inputPassword2.text.toString()
 
             user.nombre = binding.inputNombre.text.toString()
+
+            user.email = binding.inputMail.text.toString()
 
             baseDatos.updateUser(user, usernameOld!!)
 

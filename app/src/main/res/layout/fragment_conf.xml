@@ -7,6 +7,110 @@
     android:background="@color/white"
     tools:context=".ui.conf.ConfFragment">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editPassword"
+        android:layout_width="340dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_mail"
+        app:layout_constraintEnd_toEndOf="@+id/text_pass"
+        app:layout_constraintEnd_toStartOf="@+id/edit3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_username"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPassword2"
+            android:layout_width="340dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/grey"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            app:layout_constraintBottom_toTopOf="@+id/text_mail"
+            app:layout_constraintEnd_toStartOf="@+id/edit3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_username"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/edit4"
+        android:layout_width="@dimen/dim_25dp"
+        android:layout_height="@dimen/dim_25dp"
+        android:layout_marginTop="196dp"
+        android:background="@drawable/ic_edit"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/input_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/edit2" />
+
+    <EditText
+        android:id="@+id/input_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dim_20dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="@dimen/dim_50dp"
+        android:backgroundTint="@color/grey"
+        android:ems="10"
+        android:enabled="false"
+        android:fontFamily="@font/george_semibold"
+        android:hint="@string/mail2"
+        android:inputType="textEmailAddress"
+        android:minHeight="@dimen/dim_min_heig"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_nombre" />
+
+    <EditText
+        android:id="@+id/input_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dim_20dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="@dimen/dim_50dp"
+        android:backgroundTint="@color/grey"
+        android:ems="10"
+        android:enabled="false"
+        android:fontFamily="@font/george_semibold"
+        android:hint="@string/nombre_usuario"
+        android:inputType="textEmailAddress"
+        android:minHeight="@dimen/dim_min_heig"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_nombre" />
+
+    <TextView
+        android:id="@+id/text_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="288dp"
+        android:fontFamily="@font/george_bold"
+        android:text="@string/mail"
+        android:textColor="@color/purple_500"
+        android:textSize="@dimen/dim_25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nombre" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="@dimen/dim_200dp"
@@ -23,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dim_20dp"
-        android:layout_marginTop="@dimen/dim_80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="@dimen/dim_50dp"
         android:backgroundTint="@color/grey"
         android:enabled="false"
@@ -33,19 +137,7 @@
         android:textColor="@color/black"
         android:textColorHint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
-
-    <TextView
-        android:id="@+id/text_nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_20dp"
-        android:layout_marginTop="@dimen/dim_35dp"
-        android:fontFamily="@font/george_bold"
-        android:text="@string/nombre"
-        android:textColor="@color/purple_500"
-        android:textSize="@dimen/dim_25sp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
@@ -53,19 +145,20 @@
         android:id="@+id/edit1"
         android:layout_width="@dimen/dim_25dp"
         android:layout_height="@dimen/dim_25dp"
-        android:layout_marginTop="@dimen/dim_90dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/ic_edit"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toEndOf="@+id/input_nombre"
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <TextView
-        android:id="@+id/text_mail"
+        android:id="@+id/text_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_20dp"
-        android:layout_marginTop="@dimen/dim_80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/george_bold"
         android:text="@string/usuario"
         android:textColor="@color/purple_500"
@@ -73,34 +166,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_nombre" />
 
-    <EditText
-        android:id="@+id/input_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_20dp"
-        android:layout_marginTop="@dimen/dim_60dp"
-        android:layout_marginEnd="@dimen/dim_50dp"
-        android:backgroundTint="@color/grey"
-        android:ems="10"
-        android:enabled="false"
-        android:fontFamily="@font/george_semibold"
-        android:hint="@string/nombre_usuario"
-        android:inputType="textEmailAddress"
-        android:minHeight="@dimen/dim_min_heig"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_nombre" />
-
     <View
         android:id="@+id/edit2"
         android:layout_width="@dimen/dim_25dp"
         android:layout_height="@dimen/dim_25dp"
-        android:layout_marginTop="@dimen/dim_80dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/ic_edit"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toEndOf="@+id/input_nombre"
         app:layout_constraintTop_toBottomOf="@+id/edit1" />
 
@@ -108,57 +182,63 @@
         android:id="@+id/text_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_20dp"
-        android:layout_marginTop="@dimen/dim_75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/george_bold"
         android:text="@string/hint_contra_edit"
         android:textColor="@color/purple_500"
         android:textSize="@dimen/dim_25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_mail" />
+        app:layout_constraintTop_toBottomOf="@+id/text_username" />
 
-    <EditText
-        android:id="@+id/inputPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_20dp"
-        android:layout_marginTop="@dimen/dim_60dp"
-        android:layout_marginEnd="@dimen/dim_50dp"
-        android:backgroundTint="@color/grey"
-        android:ems="10"
-        android:enabled="false"
-        android:fontFamily="@font/george_semibold"
-        android:hint="@string/hint_asterisco"
-        android:inputType="textPassword"
-        android:minHeight="@dimen/dim_min_heig"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_username" />
+<!--    <EditText-->
+<!--        android:id="@+id/inputPassword"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/dim_20dp"-->
+<!--        android:layout_marginTop="68dp"-->
+<!--        android:layout_marginEnd="@dimen/dim_50dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:backgroundTint="@color/grey"-->
+<!--        android:ems="10"-->
+<!--        android:enabled="false"-->
+<!--        android:fontFamily="@font/george_semibold"-->
+<!--        android:hint="@string/hint_asterisco"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:minHeight="@dimen/dim_min_heig"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textColorHint="@color/grey"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/text_mail"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/input_username"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
     <View
         android:id="@+id/edit3"
         android:layout_width="@dimen/dim_25dp"
         android:layout_height="@dimen/dim_25dp"
-        android:layout_marginTop="@dimen/dim_85dp"
+        android:layout_marginTop="84dp"
         android:background="@drawable/ic_edit"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toEndOf="@+id/input_nombre"
         app:layout_constraintTop_toBottomOf="@+id/edit2" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <TextView
+        android:id="@+id/text_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dim_15dp"
-        android:layout_marginBottom="@dimen/dim_80dp"
-        android:minHeight="@dimen/dim_min_heig"
-        android:text="@string/notificaciones"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:checked="true" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/george_bold"
+        android:text="@string/nombre"
+        android:textColor="@color/purple_500"
+        android:textSize="@dimen/dim_25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <Button
         android:id="@+id/btn_guardar_conf"
@@ -173,5 +253,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
