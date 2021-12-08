@@ -10,6 +10,8 @@ import android.widget.Toast
 import android.Manifest
 import android.content.Context
 import android.content.DialogInterface
+import android.content.res.ColorStateList
+import android.graphics.Color
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -27,6 +29,7 @@ import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 import com.tecno_moviles.museo_cano_pacha.utils.RESULTADO_QR
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import android.text.Html
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.getSystemService
 
@@ -98,6 +101,7 @@ class HomeActivity : AppCompatActivity() {
         )
 
         navView.setupWithNavController(navController)
+        actionBar?.title = Html.fromHtml("<font color='#ff0000'>ActionBarTitle </font>")
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         headerView = binding.navView.getHeaderView(0)
@@ -108,10 +112,10 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        menuInflater.inflate(R.menu.main, menu)
+//        return true
+//    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)

@@ -35,7 +35,7 @@
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dim_1dp"
-        android:layout_marginTop="@dimen/dim_35dp"
+        android:layout_marginTop="@dimen/dim_55dp"
         android:background="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +110,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dim_1dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toTopOf="@+id/btn_perfil_fav"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -119,28 +119,15 @@
         android:id="@+id/btn_perfil_fav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dim_30dp"
+
         android:background="@drawable/rounded_btn"
         android:paddingStart="@dimen/dim_20dp"
         android:paddingEnd="@dimen/dim_20dp"
         android:text="@string/txt_favoritos"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
-
-    <Button
-        android:id="@+id/btn_compartir_perfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dim_30dp"
-        android:background="@drawable/rounded_btn"
-        android:paddingStart="@dimen/dim_20dp"
-        android:paddingEnd="@dimen/dim_20dp"
-        android:text="@string/compartir_mi_perfil"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_perfil_fav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
