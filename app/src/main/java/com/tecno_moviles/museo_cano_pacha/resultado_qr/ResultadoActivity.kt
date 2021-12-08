@@ -22,6 +22,7 @@ import org.json.JSONObject
 import android.widget.ArrayAdapter
 import java.util.stream.Collectors
 import android.widget.AdapterView
+import com.tecno_moviles.museo_cano_pacha.utils.IP
 
 class ResultadoActivity : AppCompatActivity() {
 
@@ -120,7 +121,7 @@ class ResultadoActivity : AppCompatActivity() {
             }
         }
 
-        AndroidNetworking.get("http://192.168.1.6:8080/api/item-museo?qr=$qr")
+        AndroidNetworking.get("http://$IP:8080/api/item-museo?qr=$qr")
             .build().getAsJSONObject(listener)
 
 
