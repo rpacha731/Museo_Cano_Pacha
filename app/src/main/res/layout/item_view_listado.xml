@@ -10,25 +10,29 @@
         android:layout_width="@dimen/dim_80dp"
         android:layout_height="@dimen/dim_80dp"
         android:layout_marginStart="@dimen/dim_10dp"
-        android:layout_marginBottom="@dimen/dim_5dp"
+
+
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/backItem"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dim_100dp"
-        android:background="@color/transparente"
-        android:translationZ="@dimen/dim_5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <View-->
+<!--        android:id="@+id/backItem"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/dim_100dp"-->
+<!--        android:background="@color/transparente"-->
+<!--        android:translationZ="@dimen/dim_5dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="260dp"
-        android:layout_height="@dimen/dim_80dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dim_80dp"
+        android:layout_marginTop="@dimen/dim_10dp"
+        android:layout_marginBottom="@dimen/dim_10dp"
         android:layout_marginStart="@dimen/dim_100dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/room_name"
+
             android:textAlignment="center"/>
 
     </LinearLayout>

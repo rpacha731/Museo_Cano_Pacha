@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
+import com.tecno_moviles.museo_cano_pacha.HomeActivity
 import com.tecno_moviles.museo_cano_pacha.R
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos.Companion.getInstance
 import com.tecno_moviles.museo_cano_pacha.resultado_qr.ResultadoActivity

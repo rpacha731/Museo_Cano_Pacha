@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import com.tecno_moviles.museo_cano_pacha.HomeActivity
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
-import com.tecno_moviles.museo_cano_pacha.database.SharedPref
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentConfBinding
 import com.tecno_moviles.museo_cano_pacha.login.MainLoginActivity
 import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
@@ -127,7 +125,7 @@ class ConfFragment : Fragment() {
 
             baseDatos.updateUser(user, usernameOld!!)
 
-            HomeActivity.updateDrawer(user.username!!, user.email!!)
+            HomeActivity.updateDrawer()
 
             Toast.makeText(context, "Se guardaron los datos correctamente", Toast.LENGTH_LONG).show()
 //            Navigation.findNavController(view).navigate(ConfFragmentDirections.actionNavConfToNavHome())

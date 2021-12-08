@@ -22,6 +22,7 @@ import org.json.JSONObject
 import android.widget.ArrayAdapter
 import java.util.stream.Collectors
 import android.widget.AdapterView
+import android.widget.Toast
 import com.tecno_moviles.museo_cano_pacha.utils.IP
 
 class ResultadoActivity : AppCompatActivity() {
@@ -117,7 +118,12 @@ class ResultadoActivity : AppCompatActivity() {
 
             }
             override fun onError(anError: ANError?) {
-                Log.println(Log.ERROR, "ERROR", anError.toString())
+                Log.println(Log.ERROR, "ERROR", anError!!.toString())
+                if (anError.response.code() == 404) {
+                    Toast.makeText(applicationContext, "No existe un item de museo con ese QR", Toast.LENGTH_LONG).show()
+                    finish()
+                }
+
             }
         }
 

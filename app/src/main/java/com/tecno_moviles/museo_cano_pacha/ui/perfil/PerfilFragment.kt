@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
+import com.tecno_moviles.museo_cano_pacha.HomeActivity
 import com.tecno_moviles.museo_cano_pacha.database.BaseDatos
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentPerfilBinding
 import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
