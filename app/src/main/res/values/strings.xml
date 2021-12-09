@@ -10,7 +10,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home"><span style="color: #000000"> Home </span></string>
+    <string name="menu_home">Home</string>
     <string name="menu_ayuda">Ayuda</string>
     <string name="menu_cerrarSesion">Cerrar Sesión</string>
     <string name="menu_conf">Configuración</string>

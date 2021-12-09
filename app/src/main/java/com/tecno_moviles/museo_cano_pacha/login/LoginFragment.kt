@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
             val userTmp = MainLoginActivity.baseDatos.getUser(editUsuario.text.toString())
 
             if (editUsuario.text.toString() == "") {
-                Toast.makeText(context, "Por favor, ingrese un pinche usuario", Toast.LENGTH_LONG)
+                Toast.makeText(context, "Por favor, ingrese un usuario", Toast.LENGTH_LONG)
                     .show()
                 return@setOnClickListener
             }
@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
             }
 
             if (editPassword.text.toString() == "") {
-                Toast.makeText(context, "Por favor, ingrese la pinche password", Toast.LENGTH_LONG)
+                Toast.makeText(context, "Por favor, ingrese una password", Toast.LENGTH_LONG)
                     .show()
                 return@setOnClickListener
             }

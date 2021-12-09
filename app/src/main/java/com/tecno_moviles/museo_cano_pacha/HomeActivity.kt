@@ -26,7 +26,6 @@ import com.tecno_moviles.museo_cano_pacha.splash.SplashActivity
 import com.tecno_moviles.museo_cano_pacha.utils.RESULTADO_QR
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
-import android.text.Html
 
 class HomeActivity : AppCompatActivity() {
 
