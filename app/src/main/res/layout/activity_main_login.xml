@@ -12,6 +12,7 @@
         android:layout_width="@dimen/dim_logo_museo"
         android:layout_height="@dimen/dim_logo_museo"
         android:layout_marginTop="@dimen/dim_20dp"
+        android:contentDescription="@string/imagen_museo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

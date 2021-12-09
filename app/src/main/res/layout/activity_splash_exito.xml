@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dim_15dp"
             android:fontFamily="@font/george_semibold_italic"
-            android:text="username"
+            android:text="@string/username"
             android:textColor="#00FF00"
             android:textSize="@dimen/dim_30sp"
             tools:text="username" />

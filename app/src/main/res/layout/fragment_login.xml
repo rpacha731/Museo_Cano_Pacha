@@ -34,7 +34,7 @@
             android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_user"
             android:drawableTint="@color/black"
-            android:ems="10"
+            android:autofillHints="username"
             android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_usuario_edit"
             android:inputType="text"
@@ -57,20 +57,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
-                android:hint="Contraseña"
+                android:hint="@string/contrase_a"
                 android:inputType="textPassword"
                 android:textAlignment="center"
                 android:maxLength="15"
+                android:autofillHints="password"
                 android:backgroundTint="@color/grey"
                 android:drawableTint="@color/black"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/btnOlvideContra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dim_5dp"
             android:layout_marginBottom="@dimen/dim_15dp"
             android:fontFamily="@font/george_semibold"
             android:text="@string/txt_olvidaste"

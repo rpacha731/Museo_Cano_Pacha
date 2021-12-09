@@ -74,4 +74,10 @@
     <string name="links_externos">Links externos:</string>
     <string name="_1515">1515</string>
     <string name="guion_medio">-</string>
+    <string name="imagen_museo">Imagen museo</string>
+    <string name="username">username</string>
+    <string name="logo_iua">Logo IUA</string>
+    <string name="Descripcion_ayuda">Esta aplicación fue desarrollada en el marco de la materia Tecnologías Móviles. Con ella podrás escanear códigos QR de los diferentes museos.</string>
+    <string name="imagen_qr">Imagen QR</string>
+    <string name="contrase_a">Contraseña</string>
 </resources>

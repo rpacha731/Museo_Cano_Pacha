@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/backgr">
@@ -45,7 +46,8 @@
                 android:paddingStart="@dimen/dim_15dp"
                 android:paddingEnd="@dimen/dim_10dp"
                 android:text="@string/txt_ingresar"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/btnIrRegistrar"
@@ -58,7 +60,8 @@
                 android:paddingStart="@dimen/dim_15dp"
                 android:paddingEnd="@dimen/dim_10dp"
                 android:text="@string/txt_registrarse"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
 
     </LinearLayout>

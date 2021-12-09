@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dim_20dp"
         android:src="@drawable/iua"
+        android:contentDescription="@string/logo_iua"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +36,7 @@
         android:fontFamily="@font/george_bold"
         android:paddingStart="@dimen/dim_25dp"
         android:paddingEnd="@dimen/dim_25dp"
-        android:text="Esta aplicación fue desarrollada en el marco de la materia Tecnologías Móviles. Con ella podrás escanear códigos QR de los diferentes museos."
+        android:text="@string/Descripcion_ayuda"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="@dimen/dim_25sp"
@@ -51,7 +52,7 @@
         android:fontFamily="@font/george_bold"
         android:text="@string/qu_te_diviertas"
         android:textColor="@color/purple_500"
-        android:textSize="40dp"
+        android:textSize="@dimen/dim_40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_ayuda" />

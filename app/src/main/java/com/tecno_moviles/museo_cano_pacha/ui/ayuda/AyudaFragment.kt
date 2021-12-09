@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.tecno_moviles.museo_cano_pacha.HomeActivity
 import com.tecno_moviles.museo_cano_pacha.databinding.FragmentAyudaBinding
 
 class AyudaFragment : Fragment() {

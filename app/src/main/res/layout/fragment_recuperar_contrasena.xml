@@ -29,9 +29,9 @@
                 android:id="@+id/btnVolverLogin"
                 android:layout_width="@dimen/dim_35dp"
                 android:layout_height="@dimen/dim_35dp"
-                android:backgroundTint="@color/black"
                 android:layout_marginEnd="@dimen/dim_15dp"
-                android:background="@drawable/ic_arrow_back" />
+                android:background="@drawable/ic_arrow_back"
+                android:backgroundTint="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -47,10 +47,10 @@
             android:id="@+id/editUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="username"
             android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_user"
             android:drawableTint="@color/black"
-            android:ems="10"
             android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_usuario_edit"
             android:inputType="text"
@@ -68,7 +68,7 @@
             android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_email"
             android:drawableTint="@color/black"
-            android:ems="10"
+            android:autofillHints="emailAddress"
             android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_email_edit"
             android:inputType="textEmailAddress"

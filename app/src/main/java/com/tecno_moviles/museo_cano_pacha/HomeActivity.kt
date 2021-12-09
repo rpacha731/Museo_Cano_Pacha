@@ -3,15 +3,12 @@ package com.tecno_moviles.museo_cano_pacha
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
-import android.content.DialogInterface
-import android.content.res.ColorStateList
-import android.graphics.Color
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -30,9 +27,6 @@ import com.tecno_moviles.museo_cano_pacha.utils.RESULTADO_QR
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.text.Html
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.getSystemService
-
 
 class HomeActivity : AppCompatActivity() {
 
@@ -43,7 +37,9 @@ class HomeActivity : AppCompatActivity() {
                                                   Manifest.permission.INTERNET)
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         private lateinit var headerView: View
+        @SuppressLint("StaticFieldLeak")
         private lateinit var context: Context
 
         fun setContext(con: Context) {
@@ -101,7 +97,6 @@ class HomeActivity : AppCompatActivity() {
         )
 
         navView.setupWithNavController(navController)
-        actionBar?.title = Html.fromHtml("<font color='#ff0000'>ActionBarTitle </font>")
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         headerView = binding.navView.getHeaderView(0)

@@ -34,7 +34,7 @@
             android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_check"
             android:drawableTint="@color/black"
-            android:ems="10"
+            android:autofillHints="name"
             android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_nombre"
             android:inputType="text"
@@ -51,7 +51,7 @@
             android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_user"
             android:drawableTint="@color/black"
-            android:ems="10"
+            android:autofillHints="username"
             android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_usuario_edit"
             android:inputType="text"
@@ -68,7 +68,7 @@
             android:backgroundTint="@color/grey"
             android:drawableStart="@drawable/ic_email"
             android:drawableTint="@color/black"
-            android:ems="10"
+            android:autofillHints="emailAddress"
             android:fontFamily="@font/george_semibold"
             android:hint="@string/hint_email_edit"
             android:inputType="textEmailAddress"
@@ -76,23 +76,6 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
-
-<!--        <EditText-->
-<!--            android:id="@+id/editRegisPassword"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/dim_15dp"-->
-<!--            android:backgroundTint="@color/grey"-->
-<!--            android:drawableStart="@drawable/ic_lock"-->
-<!--            android:drawableTint="@color/black"-->
-<!--            android:ems="10"-->
-<!--            android:fontFamily="@font/george_semibold"-->
-<!--            android:hint="@string/hint_contra_edit"-->
-<!--            android:inputType="textPassword"-->
-<!--            android:minHeight="@dimen/dim_min_heig"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textColorHint="@color/grey" />-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editPassword"
@@ -107,14 +90,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
-                android:hint="Contraseña"
+                android:hint="@string/contrase_a"
                 android:inputType="textPassword"
                 android:textAlignment="center"
+                android:autofillHints="password"
                 android:maxLength="15"
                 android:backgroundTint="@color/grey"
                 android:drawableTint="@color/black"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

@@ -44,9 +44,9 @@ class ConfFragment : Fragment() {
         val user = baseDatos!!.getUser(SplashActivity.prefs.username.toString())
 
         binding.inputNombre.setText(user!!.nombre)
-        binding.inputUsername.setText(user!!.username)
-        binding.inputPassword2.setText(user!!.password)
-        binding.inputMail.setText(user!!.email)
+        binding.inputUsername.setText(user.username)
+        binding.inputPassword2.setText(user.password)
+        binding.inputMail.setText(user.email)
         binding.inputNombre.setTextColor(Color.GRAY)
         binding.inputUsername.setTextColor(Color.GRAY)
         binding.inputPassword2.setTextColor(Color.GRAY)
